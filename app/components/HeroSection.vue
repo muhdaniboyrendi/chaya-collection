@@ -16,15 +16,13 @@ const sources = stats.map(() => ref(0));
 
 const outputs = sources.map((source) =>
   useTransition(source, {
-    duration: 2000,
+    duration: 4000,
     transition: TransitionPresets.easeOutExpo,
   }),
 );
 
 const statsRef = ref(null);
 const hasAnimated = ref(false);
-
-const displayValues = computed(() => outputs.map((o) => Math.round(o.value)));
 
 onMounted(() => {
   const { stop } = useIntersectionObserver(
@@ -35,7 +33,7 @@ onMounted(() => {
         sources.forEach((source, i) => {
           source.value = stats[i].value;
         });
-        stop(); // hentikan observer setelah animasi jalan
+        stop();
       }
     },
     { threshold: 0.3 },
@@ -46,7 +44,7 @@ onMounted(() => {
 <template>
   <section
     id="beranda"
-    class="min-h-dvh pt-16 lg:pt-20 bg-[#FBF7F0] relative overflow-hidden"
+    class="min-h-dvh pt-12 lg:pt-14 bg-[#FBF7F0] relative overflow-hidden"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -58,10 +56,10 @@ onMounted(() => {
             :initial="{ opacity: 0, x: -100 }"
             :enter="{ opacity: 1, x: 0 }"
             :duration="1000"
-            class="inline-flex items-center gap-2 bg-[#1A1208] text-[#C9954C] px-4 py-2 rounded-full text-sm font-semibold"
+            class="inline-flex items-center gap-2 bg-[#1A1208] text-[#C9954C] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
           >
             <i class="bi bi-patch-check-fill"></i>
-            Terpercaya Sejak 2009
+            Sejak 2009
           </div>
 
           <!-- Headline -->
@@ -124,6 +122,7 @@ onMounted(() => {
 
           <!-- Mini stats -->
           <div
+            ref="statsRef"
             v-motion
             :initial="{ opacity: 0 }"
             :enter="{ opacity: 1 }"
@@ -152,16 +151,16 @@ onMounted(() => {
         </div>
 
         <!-- Right - Decorative Illustration Card -->
-        <div class="relative hidden lg:block">
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: 100 }"
+          :enter="{ opacity: 1, x: 0 }"
+          :delay="1000"
+          :duration="1000"
+          class="relative hidden lg:block"
+        >
           <!-- Main card -->
-          <div
-            v-motion
-            :initial="{ opacity: 0, x: 100 }"
-            :enter="{ opacity: 1, x: 0 }"
-            :delay="1000"
-            :duration="1000"
-            class="relative bg-[#1A1208] rounded-3xl p-10 overflow-hidden"
-          >
+          <div class="relative bg-[#1A1208] rounded-3xl p-10 overflow-hidden">
             <!-- Pattern background inside card -->
             <div class="absolute inset-0 opacity-10">
               <svg

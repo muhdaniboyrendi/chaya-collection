@@ -5,3 +5,7 @@
 @theme {
   --font-primary: "Space Grotesk", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

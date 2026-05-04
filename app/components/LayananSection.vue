@@ -47,8 +47,21 @@ const layanan = [
         class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-14"
       >
         <div class="flex items-start gap-6">
-          <span class="section-label shrink-0">Layanan</span>
-          <p class="text-[#FBF7F0]/70 text-base leading-relaxed max-w-sm">
+          <span
+            v-motion
+            :initial="{ opacity: 0, x: -50 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="section-label shrink-0 text-[#C9954C]"
+            >Layanan</span
+          >
+          <p
+            v-motion
+            :initial="{ opacity: 0, y: 50 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :duration="1000"
+            class="text-[#FBF7F0]/70 text-base leading-relaxed max-w-sm"
+          >
             Kami menyediakan berbagai layanan jahit dan kebutuhan perlengkapan
             jahit untuk memenuhi kebutuhan Anda.
           </p>
@@ -60,8 +73,12 @@ const layanan = [
         <div
           v-for="(item, i) in layanan"
           :key="i"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
           :class="[
-            'relative rounded-3xl p-8 border card-hover cursor-default overflow-hidden',
+            'relative rounded-3xl p-8 border cursor-default overflow-hidden',
             item.dark
               ? 'bg-[#FBF7F0] border-transparent text-[#1A1208]'
               : 'bg-[#2D2416] border-[#3D3020] text-[#FBF7F0]',
@@ -105,14 +122,21 @@ const layanan = [
 
       <!-- Bottom CTA -->
       <div class="mt-12 text-center">
-        <a
-          :href="contactInfo.whatsapp"
-          target="_blank"
-          class="inline-flex items-center gap-2.5 bg-[#C9954C] text-[#1A1208] px-8 py-4 rounded-xl font-bold text-base hover:bg-[#E8B96A] transition-colors"
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
         >
-          <i class="bi bi-whatsapp text-lg"></i>
-          Konsultasi Sekarang — Gratis!
-        </a>
+          <a
+            :href="contactInfo.whatsapp"
+            target="_blank"
+            class="inline-flex items-center gap-2.5 bg-[#C9954C] text-[#1A1208] px-8 py-4 rounded-xl font-bold text-base hover:bg-[#E8B96A] transition-colors"
+          >
+            <i class="bi bi-whatsapp text-lg"></i>
+            Konsultasi Sekarang — Gratis!
+          </a>
+        </div>
       </div>
     </div>
   </section>

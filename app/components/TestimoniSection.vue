@@ -1,62 +1,75 @@
 <script setup>
 const testimoni = [
   {
-    name: 'Siti Rahayu',
-    role: 'Pelanggan Setia',
-    location: 'Matesih',
+    name: "Siti Rahayu",
+    role: "Pelanggan Setia",
+    location: "Matesih",
     rating: 5,
-    text: 'Sudah langganan lebih dari 5 tahun di Chaya Collection. Hasilnya selalu rapi dan sesuai dengan keinginan. Penjahitnya juga ramah dan sabar menjelaskan pilihan bahan.',
-    initials: 'SR',
-    color: '#C9954C',
+    text: "Sudah langganan lebih dari 5 tahun di Chaya Collection. Hasilnya selalu rapi dan sesuai dengan keinginan. Penjahitnya juga ramah dan sabar menjelaskan pilihan bahan.",
+    initials: "SR",
+    color: "#C9954C",
   },
   {
-    name: 'Budi Santoso',
-    role: 'Pelanggan',
-    location: 'Karanganyar',
+    name: "Budi Santoso",
+    role: "Pelanggan",
+    location: "Karanganyar",
     rating: 5,
-    text: 'Pesan seragam kantor 20 pcs, hasilnya memuaskan dan tepat waktu! Harga juga kompetitif dibanding tempat lain. Pasti akan pesan lagi.',
-    initials: 'BS',
-    color: '#8C7B6B',
+    text: "Pesan seragam kantor 20 pcs, hasilnya memuaskan dan tepat waktu! Harga juga kompetitif dibanding tempat lain. Pasti akan pesan lagi.",
+    initials: "BS",
+    color: "#8C7B6B",
   },
   {
-    name: 'Dewi Lestari',
-    role: 'Pelanggan',
-    location: 'Matesih',
+    name: "Dewi Lestari",
+    role: "Pelanggan",
+    location: "Matesih",
     rating: 5,
-    text: 'Baju pengantin saya dibuat di sini. Hasilnya luar biasa cantik! Penjahitnya memahami selera saya dengan baik. Sangat recommended!',
-    initials: 'DL',
-    color: '#D4A853',
+    text: "Baju pengantin saya dibuat di sini. Hasilnya luar biasa cantik! Penjahitnya memahami selera saya dengan baik. Sangat recommended!",
+    initials: "DL",
+    color: "#D4A853",
   },
   {
-    name: 'Ahmad Fauzi',
-    role: 'Pelanggan',
-    location: 'Tasikmadu',
+    name: "Ahmad Fauzi",
+    role: "Pelanggan",
+    location: "Tasikmadu",
     rating: 4,
-    text: 'Beli keperluan jahit di toko ini lengkap banget. Dari benang sampai kain tersedia. Harganya juga masuk akal dan penjualnya helpful.',
-    initials: 'AF',
-    color: '#6B8C7B',
+    text: "Beli keperluan jahit di toko ini lengkap banget. Dari benang sampai kain tersedia. Harganya juga masuk akal dan penjualnya helpful.",
+    initials: "AF",
+    color: "#6B8C7B",
   },
   {
-    name: 'Nurul Hidayah',
-    role: 'Pelanggan Setia',
-    location: 'Jaten',
+    name: "Nurul Hidayah",
+    role: "Pelanggan Setia",
+    location: "Jaten",
     rating: 5,
-    text: 'Jahit gamis koleksi lebaran selalu di Chaya. Kualitas jahitannya memang beda, lebih rapi dan nyaman dipakai. Terima kasih Chaya Collection!',
-    initials: 'NH',
-    color: '#9C6B4C',
+    text: "Jahit gamis koleksi lebaran selalu di Chaya. Kualitas jahitannya memang beda, lebih rapi dan nyaman dipakai. Terima kasih Chaya Collection!",
+    initials: "NH",
+    color: "#9C6B4C",
   },
-]
+];
 </script>
 
 <template>
   <section class="bg-[#FBF7F0] py-20 lg:py-28">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
       <!-- Section Header -->
       <div class="flex items-center gap-6 mb-14">
-        <span class="section-label">Testimoni</span>
-        <p class="text-[#8C7B6B] text-base max-w-xs leading-relaxed">
-          Apa kata pelanggan kami yang telah mempercayakan kebutuhan jahit mereka.
+        <span
+          v-motion
+          :initial="{ opacity: 0, x: -50 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="section-label"
+          >Testimoni</span
+        >
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-[#8C7B6B] text-base max-w-xs leading-relaxed"
+        >
+          Apa kata pelanggan kami yang telah mempercayakan kebutuhan jahit
+          mereka.
         </p>
       </div>
 
@@ -65,6 +78,10 @@ const testimoni = [
         <div
           v-for="(item, i) in testimoni"
           :key="i"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
           class="testi-card bg-white border border-[#E8D8C0] rounded-3xl p-7 card-hover"
         >
           <!-- Rating -->
@@ -72,7 +89,12 @@ const testimoni = [
             <i
               v-for="s in 5"
               :key="s"
-              :class="['bi text-base', s <= item.rating ? 'bi-star-fill text-[#C9954C]' : 'bi-star text-[#E8D8C0]']"
+              :class="[
+                'bi text-base',
+                s <= item.rating
+                  ? 'bi-star-fill text-[#C9954C]'
+                  : 'bi-star text-[#E8D8C0]',
+              ]"
             ></i>
           </div>
 
@@ -90,8 +112,12 @@ const testimoni = [
               {{ item.initials }}
             </div>
             <div>
-              <div class="text-sm font-semibold text-[#1A1208]">{{ item.name }}</div>
-              <div class="text-xs text-[#8C7B6B]">{{ item.role }} · {{ item.location }}</div>
+              <div class="text-sm font-semibold text-[#1A1208]">
+                {{ item.name }}
+              </div>
+              <div class="text-xs text-[#8C7B6B]">
+                {{ item.role }} · {{ item.location }}
+              </div>
             </div>
           </div>
         </div>
@@ -103,20 +129,32 @@ const testimoni = [
       </p>
 
       <!-- Overall rating -->
-      <div class="mt-12 bg-[#1A1208] rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="1000"
+        class="mt-12 bg-[#1A1208] rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
         <div>
           <div class="font-display text-5xl font-800 text-[#C9954C]">4.9</div>
           <div class="flex gap-1 mt-2">
-            <i v-for="s in 5" :key="s" class="bi bi-star-fill text-[#C9954C] text-sm"></i>
+            <i
+              v-for="s in 5"
+              :key="s"
+              class="bi bi-star-fill text-[#C9954C] text-sm"
+            ></i>
           </div>
-          <div class="text-[#FBF7F0]/60 text-sm mt-1">Rata-rata rating dari 100+ ulasan</div>
+          <div class="text-[#FBF7F0]/60 text-sm mt-1">
+            Rata-rata rating dari 100+ ulasan
+          </div>
         </div>
         <div class="text-center sm:text-right">
           <p class="text-[#FBF7F0]/80 text-sm mb-4 max-w-xs">
             Bergabunglah dengan ratusan pelanggan puas Chaya Collection!
           </p>
           <a
-            href="https://wa.me/6281234567890"
+            :href="contactInfo.whatsapp"
             target="_blank"
             class="inline-flex items-center gap-2 bg-[#C9954C] text-[#1A1208] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#E8B96A] transition-colors"
           >

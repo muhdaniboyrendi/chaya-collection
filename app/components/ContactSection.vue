@@ -36,8 +36,21 @@ const layananOptions = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="flex items-center gap-6 mb-14">
-        <span class="section-label">Kontak</span>
-        <p class="text-[#8C7B6B] text-base max-w-xs leading-relaxed">
+        <span
+          v-motion
+          :initial="{ opacity: 0, x: -50 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="section-label"
+          >Kontak</span
+        >
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-[#8C7B6B] text-base max-w-xs leading-relaxed"
+        >
           Siap membantu Anda! Hubungi kami dan kami akan segera merespons.
         </p>
       </div>
@@ -45,7 +58,13 @@ const layananOptions = [
       <!-- Grid Form + Info Cards -->
       <div class="grid lg:grid-cols-2 gap-12">
         <!-- Kiri - Form -->
-        <div class="bg-white border border-[#E8D8C0] rounded-3xl p-8">
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: -100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="bg-white border border-[#E8D8C0] rounded-3xl p-8"
+        >
           <h3 class="font-display text-2xl font-700 text-[#1A1208] mb-6">
             Kirim Pesan via WhatsApp
           </h3>
@@ -103,7 +122,13 @@ const layananOptions = [
 
         <!-- Kanan - Info Cards -->
         <div class="space-y-5">
-          <div class="bg-[#1A1208] rounded-3xl p-8">
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="bg-[#1A1208] rounded-3xl p-8"
+          >
             <div class="flex items-center gap-3 mb-4">
               <div
                 class="w-12 h-12 bg-[#C9954C] rounded-2xl flex items-center justify-center"
@@ -129,7 +154,13 @@ const layananOptions = [
             </a>
           </div>
 
-          <div class="bg-white border border-[#E8D8C0] rounded-3xl p-8">
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="bg-white border border-[#E8D8C0] rounded-3xl p-8"
+          >
             <div class="flex items-center gap-3 mb-4">
               <div
                 class="w-12 h-12 bg-[#F0E8D8] rounded-2xl flex items-center justify-center"
@@ -157,7 +188,13 @@ const layananOptions = [
             </a>
           </div>
 
-          <div class="bg-[#C9954C] rounded-3xl p-8">
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="bg-[#C9954C] rounded-3xl p-8"
+          >
             <div class="flex items-center gap-3 mb-5">
               <div
                 class="w-12 h-12 bg-[#1A1208] rounded-2xl flex items-center justify-center"
@@ -188,6 +225,10 @@ const layananOptions = [
       <!-- Google Maps Embed -->
       <div class="mt-12">
         <div
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
           class="bg-white border border-[#E8D8C0] rounded-3xl overflow-hidden"
         >
           <!-- Map Header Bar -->
@@ -233,27 +274,6 @@ const layananOptions = [
                 referrerpolicy="no-referrer-when-downgrade"
                 title="Lokasi Chaya Collection - Matesih, Karanganyar"
               />
-
-              <!-- Label overlay di pojok kiri bawah peta -->
-              <div
-                class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-sm border border-[#E8D8C0] rounded-2xl px-4 py-3 shadow-lg pointer-events-none"
-              >
-                <div class="flex items-center gap-2.5">
-                  <div
-                    class="w-8 h-8 bg-[#C9954C] rounded-lg flex items-center justify-center shrink-0"
-                  >
-                    <i class="bi bi-scissors text-[#1A1208] text-sm"></i>
-                  </div>
-                  <div>
-                    <div class="font-semibold text-[#1A1208] text-xs">
-                      Chaya Collection
-                    </div>
-                    <div class="text-[10px] text-[#8C7B6B]">
-                      Jahit & Alat Jahit · Matesih
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <!-- Fallback saat SSR / belum mount -->

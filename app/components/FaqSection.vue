@@ -16,10 +16,10 @@ const faqs = [
     q: "Apakah menerima pesanan seragam dalam jumlah banyak?",
     a: "Ya! Kami melayani pesanan massal untuk seragam kantor, sekolah, organisasi, dan lainnya. Semakin banyak pesanan, semakin kompetitif harga yang bisa kami tawarkan. Hubungi kami untuk penawaran khusus.",
   },
-  {
-    q: "Bagaimana cara melakukan pemesanan?",
-    a: "Sangat mudah! (1) Hubungi kami via WhatsApp untuk konsultasi, (2) Kami tentukan ukuran dan pilih bahan/model, (3) Berikan DP pembayaran, (4) Pakaian dikerjakan sesuai jadwal, (5) Ambil atau kirim ke alamat Anda.",
-  },
+  // {
+  //   q: "Bagaimana cara melakukan pemesanan?",
+  //   a: "Sangat mudah! (1) Hubungi kami via WhatsApp untuk konsultasi, (2) Kami tentukan ukuran dan pilih bahan/model, (3) Berikan DP pembayaran, (4) Pakaian dikerjakan sesuai jadwal, (5) Ambil atau kirim ke alamat Anda.",
+  // },
   {
     q: "Apakah ada garansi kalau hasil jahitan tidak sesuai?",
     a: "Kepuasan pelanggan adalah prioritas kami. Jika ada ketidaksesuaian dengan kesepakatan awal, kami siap melakukan revisi tanpa biaya tambahan. Kami pastikan Anda puas dengan hasilnya.",
@@ -39,25 +39,49 @@ function toggle(i) {
       <div class="grid lg:grid-cols-2 gap-16">
         <!-- Left header -->
         <div>
-          <span class="section-label mb-8 inline-block">FAQ</span>
+          <span
+            v-motion
+            :initial="{ opacity: 0, x: -50 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="section-label mb-8 inline-block text-[#C9954C]"
+            >FAQ</span
+          >
           <h2
+            v-motion
+            :initial="{ opacity: 0, x: -100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
             class="font-display text-3xl sm:text-4xl lg:text-5xl font-700 text-[#FBF7F0] leading-tight mb-6"
           >
             Pertanyaan yang
             <span class="italic text-[#C9954C]">Sering Ditanya</span>
           </h2>
-          <p class="text-[#FBF7F0]/60 leading-relaxed mb-8">
+          <p
+            v-motion
+            :initial="{ opacity: 0, x: -100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="text-[#FBF7F0]/60 leading-relaxed mb-8"
+          >
             Tidak menemukan jawaban yang Anda cari? Jangan ragu untuk langsung
             menghubungi kami.
           </p>
-          <a
-            :href="contactInfo.whatsapp"
-            target="_blank"
-            class="inline-flex items-center gap-2 border-2 border-[#C9954C] text-[#C9954C] px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[#C9954C] hover:text-[#1A1208] transition-all"
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: -50 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
           >
-            <i class="bi bi-chat-dots-fill"></i>
-            Tanya Langsung
-          </a>
+            <a
+              :href="contactInfo.whatsapp"
+              target="_blank"
+              class="inline-flex items-center gap-2 border-2 border-[#C9954C] text-[#C9954C] px-6 py-3 rounded-xl font-semibold text-sm hover:bg-[#C9954C] hover:text-[#1A1208] transition-all"
+            >
+              <i class="bi bi-chat-dots-fill"></i>
+              Tanya Langsung
+            </a>
+          </div>
         </div>
 
         <!-- Right accordion -->
@@ -65,8 +89,12 @@ function toggle(i) {
           <div
             v-for="(faq, i) in faqs"
             :key="i"
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
             :class="[
-              'rounded-2xl border overflow-hidden transition-all duration-300',
+              'rounded-2xl border overflow-hidden',
               openIdx === i
                 ? 'border-[#C9954C] bg-[#2D2010]'
                 : 'border-[#3D3020] bg-[#2D2416]',
