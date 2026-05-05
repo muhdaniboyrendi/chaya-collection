@@ -328,7 +328,7 @@ onMounted(() => {
                 <div class="text-xs font-semibold text-[#1A1208]">
                   Buka Setiap Hari
                 </div>
-                <div class="text-xs text-[#8C7B6B]">07.00 – 17.30 WIB</div>
+                <div class="text-xs text-[#8C7B6B]">07.00 – 17.00 WIB</div>
               </div>
             </div>
           </div>

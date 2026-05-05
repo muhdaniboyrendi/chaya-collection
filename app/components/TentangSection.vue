@@ -2,8 +2,8 @@
 const keunggulan = [
   {
     icon: "bi-award-fill",
-    title: "Berpengalaman 15+ Tahun",
-    desc: "Dipercaya ratusan pelanggan sejak 2009 dengan standar kualitas jahitan yang selalu terjaga.",
+    title: "Berpengalaman 25+ Tahun",
+    desc: "Dipercaya ratusan pelanggan sejak 2001 dengan standar kualitas jahitan yang selalu terjaga.",
   },
   {
     icon: "bi-hand-thumbs-up-fill",
@@ -86,7 +86,7 @@ const keunggulan = [
               :visible-once="{ opacity: 1, x: 0 }"
               :duration="1000"
             >
-              Chaya Collection berdiri sejak 2009 — dijalankan oleh seorang
+              Chaya Collection berdiri sejak 2001 — dijalankan oleh seorang
               penjahit berpengalaman yang mengerjakan setiap pesanan secara
               langsung, dari awal hingga selesai. Bukan produksi massal, bukan
               hasil mesin — setiap jahitan adalah hasil dari keahlian dan
@@ -98,7 +98,7 @@ const keunggulan = [
               :visible-once="{ opacity: 1, x: 0 }"
               :duration="1000"
             >
-              Dengan pengalaman lebih dari 15 tahun, kami memahami bahwa pakaian
+              Dengan pengalaman lebih dari 25 tahun, kami memahami bahwa pakaian
               yang baik bukan hanya soal tampilan — tapi soal kenyamanan,
               ketepatan ukuran, dan detail yang tidak terlihat namun sangat
               terasa.
@@ -157,7 +157,7 @@ const keunggulan = [
                   Jam Buka
                 </div>
                 <div class="text-[#FBF7F0]/60 text-sm">
-                  Setiap Hari — 07.00 s/d 17.30 WIB
+                  Setiap Hari — 07.00 s/d 17.00 WIB
                 </div>
               </div>
             </div>

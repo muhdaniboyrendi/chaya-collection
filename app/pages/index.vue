@@ -2,10 +2,10 @@
 useSeoMeta({
   title: "Chaya Collection — Jasa Jahit & Toko Alat Jahit Matesih, Karanganyar",
   description:
-    "Jasa jahit custom, permak pakaian, seragam & toko alat jahit terpercaya di Matesih, Karanganyar. Berpengalaman 15+ tahun. Hubungi kami sekarang!",
+    "Jasa jahit custom, permak pakaian, seragam & toko alat jahit terpercaya di Matesih, Karanganyar. Berpengalaman 25+ tahun. Hubungi kami sekarang!",
   ogTitle: "Chaya Collection — Jahitan Berkualitas, Harga Terjangkau",
   ogDescription:
-    "Jasa jahit & toko perlengkapan jahit terpercaya di Matesih, Karanganyar. 15+ tahun pengalaman. Layani jahit custom, seragam, permak, dan busana muslim.",
+    "Jasa jahit & toko perlengkapan jahit terpercaya di Matesih, Karanganyar. 25+ tahun pengalaman. Layani jahit custom, seragam, permak, dan busana muslim.",
   ogType: "website",
   ogLocale: "id_ID",
   twitterCard: "summary_large_image",
@@ -33,13 +33,13 @@ useSchemaOrg([
           "Friday",
           "Saturday",
         ],
-        opens: "08:00",
+        opens: "07:00",
         closes: "17:00",
       },
       {
         dayOfWeek: ["Sunday"],
-        opens: "08:00",
-        closes: "15:00",
+        opens: "13:00",
+        closes: "17:00",
       },
     ],
     priceRange: "$$",

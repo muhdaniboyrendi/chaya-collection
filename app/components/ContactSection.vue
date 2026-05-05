@@ -209,13 +209,11 @@ const layananOptions = [
             <div class="space-y-2">
               <div class="flex justify-between text-sm">
                 <span class="text-[#1A1208]/80 font-medium">Senin – Sabtu</span>
-                <span class="text-[#1A1208] font-bold">07.00 – 17.30</span>
+                <span class="text-[#1A1208] font-bold">07.00 – 17.00</span>
               </div>
               <div class="flex justify-between text-sm">
-                <span class="text-[#1A1208]/80 font-medium"
-                  >Minggu & Libur</span
-                >
-                <span class="text-[#1A1208] font-bold">13.00 – 17.30</span>
+                <span class="text-[#1A1208]/80 font-medium">Minggu</span>
+                <span class="text-[#1A1208] font-bold">13.00 – 17.00</span>
               </div>
             </div>
           </div>
