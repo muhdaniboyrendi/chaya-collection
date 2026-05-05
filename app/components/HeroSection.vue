@@ -6,9 +6,9 @@ import {
 } from "@vueuse/core";
 
 const stats = [
-  { value: 15, suffix: "+", label: "Tahun Berpengalaman" },
+  { value: 25, suffix: "+", label: "Tahun Berpengalaman" },
   { value: 1000, suffix: "+", label: "Pelanggan Puas" },
-  { value: 2000, suffix: "+", label: "Jahitan Selesai" },
+  { value: 5000, suffix: "+", label: "Jahitan Selesai" },
   { value: 100, suffix: "%", label: "Dikerjakan Manual" },
 ];
 
@@ -59,7 +59,7 @@ onMounted(() => {
             class="inline-flex items-center gap-2 bg-[#1A1208] text-[#C9954C] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
           >
             <i class="bi bi-patch-check-fill"></i>
-            Sejak 2009
+            Sejak 2001
           </div>
 
           <!-- Headline -->
