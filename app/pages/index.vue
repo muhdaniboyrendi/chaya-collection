@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from "vue";
 import { useWindowScroll, useWindowSize } from "@vueuse/core";
 
 const contactInfo = {
@@ -75,6 +74,7 @@ useSchemaOrg([
       <HeroSection />
       <LayananSection />
       <GallerySection />
+      <ProdukSection />
       <TentangSection />
       <TestimoniSection />
       <FaqSection />

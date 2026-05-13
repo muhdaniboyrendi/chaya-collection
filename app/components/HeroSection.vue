@@ -15,7 +15,7 @@ const stats = [
 const sources = stats.map(() => ref(0));
 const outputs = sources.map((source) =>
   useTransition(source, {
-    duration: 4000,
+    duration: 3000,
     transition: TransitionPresets.easeOutExpo,
   }),
 );
