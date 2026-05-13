@@ -97,45 +97,48 @@ const layanan = [
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="600"
           :delay="i * 80"
-          :class="[
-            'relative p-10 rounded-[2rem] border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
-            item.accent
-              ? 'bg-[#B1AFFF] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
-              : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] hover:border-[#1A1A1A]',
-          ]"
         >
-          <!-- Number Overlay -->
-          <div
-            class="absolute top-6 right-8 font-black text-7xl leading-none opacity-5 text-[#1A1A1A]"
-          >
-            {{ String(i + 1).padStart(2, "0") }}
-          </div>
-
-          <!-- Icon Box -->
           <div
             :class="[
-              'w-16 h-16 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center mb-8 shadow-[4px_4px_0_0_#1A1A1A] group-hover:shadow-none transition-all',
-              item.accent ? 'bg-[#FFD93D]' : 'bg-[#B4E4FF]',
+              'relative h-full p-10 rounded-[2rem] border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
+              item.accent
+                ? 'bg-[#B1AFFF] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
+                : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] hover:border-[#1A1A1A]',
             ]"
           >
-            <i :class="['bi text-2xl text-[#1A1A1A]', item.icon]"></i>
-          </div>
-
-          <h3
-            class="font-black text-2xl mb-4 uppercase tracking-tight text-[#1A1A1A]"
-          >
-            {{ item.title }}
-          </h3>
-          <p class="text-sm leading-relaxed font-bold text-[#1A1A1A]/70">
-            {{ item.desc }}
-          </p>
-
-          <!-- Decorative Thread Line (Modern Touch) -->
-          <div class="mt-6 pt-6 border-t-2 border-dashed border-[#1A1A1A]/20">
-            <span
-              class="text-[10px] font-black uppercase tracking-widest text-[#1A1A1A]/40"
-              >Premium Tailoring</span
+            <!-- Number Overlay -->
+            <div
+              class="absolute top-6 right-8 font-black text-7xl leading-none opacity-5 text-[#1A1A1A]"
             >
+              {{ String(i + 1).padStart(2, "0") }}
+            </div>
+
+            <!-- Icon Box -->
+            <div
+              :class="[
+                'w-16 h-16 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center mb-8 shadow-[4px_4px_0_0_#1A1A1A] group-hover:shadow-none transition-all',
+                item.accent ? 'bg-[#FFD93D]' : 'bg-[#B4E4FF]',
+              ]"
+            >
+              <i :class="['bi text-2xl text-[#1A1A1A]', item.icon]"></i>
+            </div>
+
+            <h3
+              class="font-black text-2xl mb-4 uppercase tracking-tight text-[#1A1A1A]"
+            >
+              {{ item.title }}
+            </h3>
+            <p class="text-sm leading-relaxed font-bold text-[#1A1A1A]/70">
+              {{ item.desc }}
+            </p>
+
+            <!-- Decorative Thread Line (Modern Touch) -->
+            <div class="mt-6 pt-6 border-t-2 border-dashed border-[#1A1A1A]/20">
+              <span
+                class="text-[10px] font-black uppercase tracking-widest text-[#1A1A1A]/40"
+                >Premium Tailoring</span
+              >
+            </div>
           </div>
         </div>
       </div>

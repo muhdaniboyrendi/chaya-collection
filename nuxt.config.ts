@@ -52,4 +52,8 @@ export default defineNuxtConfig({
     quality: 80,
     format: ["webp"],
   },
+
+  ogImage: {
+    zeroRuntime: true,
+  },
 });

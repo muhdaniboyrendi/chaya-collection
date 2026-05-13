@@ -76,7 +76,7 @@ const keunggulan = [
               :duration="700"
               class="text-[#4B5563] text-lg leading-relaxed font-bold border-l-[6px] border-[#B4E4FF] pl-6"
             >
-              Chaya Atelier berdiri sejak 2001 — dijalankan oleh seorang
+              Chaya Collection berdiri sejak 2001 — dijalankan oleh seorang
               penjahit berpengalaman yang mengerjakan setiap pesanan secara
               langsung, dari awal hingga selesai. Setiap jahitan adalah hasil
               dari keahlian dan perhatian penuh.
@@ -109,13 +109,16 @@ const keunggulan = [
               :visible-once="{ opacity: 1, y: 0 }"
               :delay="index * 150"
               :duration="600"
-              class="flex flex-col items-center text-center gap-3 bg-white rounded-2xl border-[3px] border-[#1A1A1A] p-5 shadow-[5px_5px_0_0_#B1AFFF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-150"
             >
-              <i :class="['bi text-2xl text-[#A855F7]', item.icon]"></i>
-              <span
-                class="text-[#1A1A1A] text-[10px] font-black uppercase tracking-[0.15em] leading-tight"
-                >{{ item.label }}</span
+              <div
+                class="flex flex-col items-center text-center gap-3 bg-white rounded-2xl border-[3px] border-[#1A1A1A] p-5 shadow-[5px_5px_0_0_#B1AFFF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-150"
               >
+                <i :class="['bi text-2xl text-[#A855F7]', item.icon]"></i>
+                <span
+                  class="text-[#1A1A1A] text-[10px] font-black uppercase tracking-[0.15em] leading-tight"
+                  >{{ item.label }}</span
+                >
+              </div>
             </div>
           </div>
 
@@ -182,29 +185,32 @@ const keunggulan = [
             :visible-once="{ opacity: 1, y: 0 }"
             :delay="i * 100"
             :duration="600"
-            :class="[
-              'p-8 rounded-[2rem] border-[4px] border-[#1A1A1A] transition-all duration-200',
-              i % 2 === 0
-                ? 'bg-[#FFD93D] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
-                : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]',
-            ]"
           >
             <div
               :class="[
-                'w-14 h-14 border-[3px] border-[#1A1A1A] rounded-2xl flex items-center justify-center mb-6 shadow-[4px_4px_0_0_#1A1A1A]',
-                i % 2 === 0 ? 'bg-white' : 'bg-[#B4E4FF]',
+                'h-full p-8 rounded-[2rem] border-[4px] border-[#1A1A1A] transition-all duration-200',
+                i % 2 === 0
+                  ? 'bg-[#FFD93D] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
+                  : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]',
               ]"
             >
-              <i :class="['bi text-2xl text-[#1A1A1A]', item.icon]"></i>
+              <div
+                :class="[
+                  'w-14 h-14 border-[3px] border-[#1A1A1A] rounded-2xl flex items-center justify-center mb-6 shadow-[4px_4px_0_0_#1A1A1A]',
+                  i % 2 === 0 ? 'bg-white' : 'bg-[#B4E4FF]',
+                ]"
+              >
+                <i :class="['bi text-2xl text-[#1A1A1A]', item.icon]"></i>
+              </div>
+              <h3
+                class="font-black text-xl mb-3 leading-tight uppercase tracking-tight text-[#1A1A1A]"
+              >
+                {{ item.title }}
+              </h3>
+              <p class="text-sm leading-relaxed font-bold text-[#1A1A1A]/60">
+                {{ item.desc }}
+              </p>
             </div>
-            <h3
-              class="font-black text-xl mb-3 leading-tight uppercase tracking-tight text-[#1A1A1A]"
-            >
-              {{ item.title }}
-            </h3>
-            <p class="text-sm leading-relaxed font-bold text-[#1A1A1A]/60">
-              {{ item.desc }}
-            </p>
           </div>
         </div>
       </div>

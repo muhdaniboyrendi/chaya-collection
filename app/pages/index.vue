@@ -1,8 +1,21 @@
 <script setup>
-// Data kontak dipusatkan di sini jika ingin digunakan secara global
+import { computed } from "vue";
+import { useWindowScroll, useWindowSize } from "@vueuse/core";
+
 const contactInfo = {
   whatsapp: "https://wa.me/62895629233434",
 };
+
+// Deteksi posisi scroll
+const { y: scrollY } = useWindowScroll();
+const { height: windowHeight } = useWindowSize();
+
+// Sembunyikan tombol jika dalam 100px dari bawah halaman
+const showWaButton = computed(() => {
+  const documentHeight = document.documentElement.scrollHeight;
+  const scrollBottom = scrollY.value + windowHeight.value;
+  return documentHeight - scrollBottom > 100;
+});
 
 useSeoMeta({
   title: "Chaya Collection — Jasa Jahit & Toko Alat Jahit Matesih, Karanganyar",
@@ -13,7 +26,9 @@ useSeoMeta({
     "Jasa jahit & toko perlengkapan jahit terpercaya di Matesih, Karanganyar. 25+ tahun pengalaman. Layani jahit custom, seragam, permak, dan busana muslim.",
   ogType: "website",
   ogLocale: "id_ID",
+  ogImage: "/og-image.png",
   twitterCard: "summary_large_image",
+  twitterImage: "/og-image.png",
 });
 
 useSchemaOrg([
@@ -54,11 +69,9 @@ useSchemaOrg([
 
 <template>
   <div class="selection:bg-[#B1AFFF] selection:text-[#1A1A1A]">
-    <!-- Navigation -->
     <TheNavbar />
 
     <main>
-      <!-- Sections -->
       <HeroSection />
       <LayananSection />
       <GallerySection />
@@ -68,41 +81,56 @@ useSchemaOrg([
       <ContactSection />
     </main>
 
-    <!-- Footer -->
     <TheFooter />
 
-    <!-- Floating WA Button (Neubrutalism Style) -->
-    <a
-      :href="contactInfo.whatsapp"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="fixed bottom-8 right-8 z-40 w-16 h-16 bg-[#25D366] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[6px_6px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-200 group"
-      aria-label="Chat WhatsApp"
-    >
-      <i
-        class="bi bi-whatsapp text-white text-3xl group-hover:scale-110 transition-transform"
-      ></i>
+    <!-- Floating WA Button -->
+    <ClientOnly>
+      <Transition name="wa-fade">
+        <a
+          v-if="showWaButton"
+          :href="contactInfo.whatsapp"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="fixed bottom-8 right-8 z-40 w-16 h-16 bg-[#25D366] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[6px_6px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-200 group"
+          aria-label="Chat WhatsApp"
+        >
+          <i
+            class="bi bi-whatsapp text-white text-3xl group-hover:scale-110 transition-transform"
+          ></i>
 
-      <!-- Tooltip / Label on Hover -->
-      <span
-        class="absolute right-20 bg-[#1A1A1A] text-white text-xs font-black py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap uppercase tracking-widest border-2 border-[#1A1A1A] shadow-[4px_4px_0_0_#FFD93D]"
-      >
-        Tanya Sekarang
-      </span>
-    </a>
+          <span
+            class="absolute right-20 bg-[#1A1A1A] text-white text-xs font-black py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap uppercase tracking-widest border-2 border-[#1A1A1A] shadow-[4px_4px_0_0_#FFD93D]"
+          >
+            Tanya Sekarang
+          </span>
+        </a>
+      </Transition>
+    </ClientOnly>
   </div>
 </template>
 
 <style>
-/* Global Smooth Scroll */
 html {
   scroll-behavior: smooth;
 }
 
-/* Typography Customization */
 body {
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #1a1a1a;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Animasi fade untuk tombol WA */
+.wa-fade-enter-active,
+.wa-fade-leave-active {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.wa-fade-enter-from,
+.wa-fade-leave-to {
+  opacity: 0;
+  transform: translateY(12px) scale(0.9);
 }
 </style>

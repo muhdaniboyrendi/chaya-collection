@@ -106,59 +106,62 @@ const testimoni = [
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="600"
           :delay="i * 100"
-          class="bg-white rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
         >
-          <!-- Rating & Quote Icon -->
-          <div class="flex justify-between items-start mb-6">
-            <div class="flex gap-1">
-              <i
-                v-for="s in 5"
-                :key="s"
-                :class="[
-                  'bi text-lg',
-                  s <= item.rating
-                    ? 'bi-star-fill text-[#FFD93D]'
-                    : 'bi-star text-[#E5E7EB]',
-                ]"
-              ></i>
-            </div>
-            <div
-              class="w-10 h-10 bg-[#B1AFFF] border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shadow-[3px_3px_0_0_#1A1A1A]"
-            >
-              <i class="bi bi-quote text-[#1A1A1A] text-xl"></i>
-            </div>
-          </div>
-
-          <!-- Text -->
-          <p
-            class="text-[#1A1A1A] text-base leading-relaxed mb-8 font-bold italic"
-          >
-            "{{ item.text }}"
-          </p>
-
-          <!-- Author Info -->
           <div
-            class="flex items-center gap-4 pt-6 border-t-2 border-dashed border-[#1A1A1A]/10"
+            class="h-full bg-white rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
           >
-            <div
-              :class="[
-                'w-14 h-14 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center text-[#1A1A1A] text-xl font-black shrink-0 shadow-[4px_4px_0_0_#1A1A1A]',
-                item.color,
-              ]"
-            >
-              {{ item.initials }}
-            </div>
-            <div>
-              <div
-                class="text-sm font-black text-[#1A1A1A] uppercase tracking-widest"
-              >
-                {{ item.name }}
+            <!-- Rating & Quote Icon -->
+            <div class="flex justify-between items-start mb-6">
+              <div class="flex gap-1">
+                <i
+                  v-for="s in 5"
+                  :key="s"
+                  :class="[
+                    'bi text-lg',
+                    s <= item.rating
+                      ? 'bi-star-fill text-[#FFD93D]'
+                      : 'bi-star text-[#E5E7EB]',
+                  ]"
+                ></i>
               </div>
               <div
-                class="text-[10px] font-black text-[#6B7280] uppercase tracking-wider"
+                class="w-10 h-10 bg-[#B1AFFF] border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shadow-[3px_3px_0_0_#1A1A1A]"
               >
-                {{ item.role }} <span class="text-[#A855F7] mx-1">•</span>
-                {{ item.location }}
+                <i class="bi bi-quote text-[#1A1A1A] text-xl"></i>
+              </div>
+            </div>
+
+            <!-- Text -->
+            <p
+              class="text-[#1A1A1A] text-base leading-relaxed mb-8 font-bold italic"
+            >
+              "{{ item.text }}"
+            </p>
+
+            <!-- Author Info -->
+            <div
+              class="flex items-center gap-4 pt-6 border-t-2 border-dashed border-[#1A1A1A]/10"
+            >
+              <div
+                :class="[
+                  'w-14 h-14 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center text-[#1A1A1A] text-xl font-black shrink-0 shadow-[4px_4px_0_0_#1A1A1A]',
+                  item.color,
+                ]"
+              >
+                {{ item.initials }}
+              </div>
+              <div>
+                <div
+                  class="text-sm font-black text-[#1A1A1A] uppercase tracking-widest"
+                >
+                  {{ item.name }}
+                </div>
+                <div
+                  class="text-[10px] font-black text-[#6B7280] uppercase tracking-wider"
+                >
+                  {{ item.role }} <span class="text-[#A855F7] mx-1">•</span>
+                  {{ item.location }}
+                </div>
               </div>
             </div>
           </div>

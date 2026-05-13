@@ -83,55 +83,58 @@ const items = [
           :visible-once="{ opacity: 1, scale: 1 }"
           :duration="600"
           :delay="i * 100"
-          class="group relative overflow-hidden rounded-[2.5rem] border-[4px] border-[#1A1A1A] cursor-pointer shadow-[12px_12px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[12px] hover:translate-y-[12px] transition-all duration-300"
         >
-          <!-- Image Wrapper with Color Overlay on Hover -->
-          <div class="aspect-[4/5] relative overflow-hidden">
-            <NuxtImg
-              :src="item.image"
-              width="600"
-              loading="lazy"
-              placeholder
-              format="webp"
-              :alt="item.label"
-              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
-            />
-
-            <!-- Hover Overlay Gradient -->
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"
-            ></div>
-          </div>
-
-          <!-- Label Tag - Floating Style -->
           <div
-            class="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+            class="group relative overflow-hidden rounded-[2.5rem] border-[4px] border-[#1A1A1A] cursor-pointer shadow-[12px_12px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[12px] hover:translate-y-[12px] transition-all duration-300"
           >
-            <div
-              :class="[
-                'rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-4 flex items-center justify-between gap-4 shadow-[5px_5px_0_0_#1A1A1A]',
-                item.color,
-              ]"
-            >
-              <span
-                class="font-black text-[#1A1A1A] text-lg uppercase tracking-tight"
-              >
-                {{ item.label }}
-              </span>
+            <!-- Image Wrapper with Color Overlay on Hover -->
+            <div class="aspect-[4/5] relative overflow-hidden">
+              <NuxtImg
+                :src="item.image"
+                width="600"
+                loading="lazy"
+                placeholder
+                format="webp"
+                :alt="item.label"
+                class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+              />
+
+              <!-- Hover Overlay Gradient -->
               <div
-                class="w-10 h-10 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shrink-0"
+                class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"
+              ></div>
+            </div>
+
+            <!-- Label Tag - Floating Style -->
+            <div
+              class="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
+            >
+              <div
+                :class="[
+                  'rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-4 flex items-center justify-between gap-4 shadow-[5px_5px_0_0_#1A1A1A]',
+                  item.color,
+                ]"
               >
-                <i class="bi bi-arrow-up-right text-[#1A1A1A] font-bold"></i>
+                <span
+                  class="font-black text-[#1A1A1A] text-lg uppercase tracking-tight"
+                >
+                  {{ item.label }}
+                </span>
+                <div
+                  class="w-10 h-10 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shrink-0"
+                >
+                  <i class="bi bi-arrow-up-right text-[#1A1A1A] font-bold"></i>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Quick Info Badge (Top Right) -->
-          <div class="absolute top-5 right-5">
-            <div
-              class="bg-white border-[2px] border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
-            >
-              NEW WORK
+            <!-- Quick Info Badge (Top Right) -->
+            <div class="absolute top-5 right-5">
+              <div
+                class="bg-white border-[2px] border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
+              >
+                NEW WORK
+              </div>
             </div>
           </div>
         </div>

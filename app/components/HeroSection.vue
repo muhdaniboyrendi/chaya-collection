@@ -58,19 +58,15 @@ onMounted(() => {
           <div>
             <h1
               v-motion
-              :initial="{ opacity: 0, y: 40 }"
-              :enter="{ opacity: 1, y: 0 }"
+              :initial="{ opacity: 0, x: -100 }"
+              :enter="{ opacity: 1, x: 0 }"
               :delay="200"
               :duration="700"
               class="font-black text-6xl sm:text-7xl lg:text-8xl text-[#1A1A1A] leading-[0.9] tracking-tighter mb-6"
             >
-              Jahitan<br />
+              Jahitan
               <span class="relative inline-block">
-                <span class="relative z-10 italic">Presisi,</span>
-                <!-- Highlight menggunakan Lavender -->
-                <span
-                  class="absolute bottom-2 left-0 right-0 h-6 bg-[#B1AFFF] -z-0 rounded-lg border-2 border-[#1A1A1A]"
-                ></span>
+                <span class="relative z-10 italic text-[#A855F7]">Presisi,</span>
               </span>
               <br />Gaya Terkini
             </h1>
@@ -80,7 +76,7 @@ onMounted(() => {
               :enter="{ opacity: 1, y: 0 }"
               :delay="400"
               :duration="700"
-              class="text-[#4B5563] text-xl leading-relaxed max-w-md font-bold border-l-[6px] border-[#B4E4FF] pl-5"
+              class="text-[#4B5563] text-xl leading-relaxed max-w-lg font-bold border-l-[6px] border-[#B4E4FF] pl-5"
             >
               Wujudkan pakaian impian Anda dengan sentuhan ahli di Chaya
               Atelier. Custom tailoring, modifikasi, dan desain eksklusif di
@@ -102,18 +98,16 @@ onMounted(() => {
               href="https://wa.me/62895629233434"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-3 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
+              class="text-center gap-3 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
             >
-              <i class="bi bi-chat-heart-fill text-xl"></i>
               Konsultasi Desain
             </a>
             <!-- Secondary CTA - Mint Green -->
             <a
               href="#layanan"
-              class="inline-flex items-center justify-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
+              class="text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
             >
               Eksplor Layanan
-              <i class="bi bi-arrow-up-right-circle-fill text-xl"></i>
             </a>
           </div>
 
@@ -218,7 +212,7 @@ onMounted(() => {
                 <p
                   class="text-[#A855F7] text-[10px] font-black uppercase tracking-[0.2em] mt-3"
                 >
-                  Chaya Atelier — Est. 1999
+                  Chaya Collection — Est. 2001
                 </p>
               </div>
 
