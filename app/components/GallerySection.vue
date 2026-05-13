@@ -3,116 +3,160 @@ const items = [
   {
     label: "Kebaya Modern",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#B1AFFF]",
   },
   {
     label: "Seragam Kantor",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#B4E4FF]",
   },
   {
     label: "Baju Pesta Custom",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#FFD93D]",
   },
   {
     label: "Gamis Elegan",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#B1AFFF]",
   },
   {
     label: "Permak Celana",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#FFD93D]",
   },
   {
     label: "Seragam Sekolah",
     image: "/seragam-sekolah.jpg",
+    color: "bg-[#B4E4FF]",
   },
 ];
 </script>
 
 <template>
-  <section id="galeri" class="bg-[#FBF7F0] py-20 lg:py-28">
+  <section id="galeri" class="bg-[#F0F0F0] py-20 lg:py-28 relative">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Section Header -->
       <div
-        class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 mb-14"
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16"
       >
-        <div class="flex items-center gap-6">
+        <div class="max-w-2xl">
           <span
             v-motion
-            :initial="{ opacity: 0, x: -50 }"
+            :initial="{ opacity: 0, x: -30 }"
             :visible-once="{ opacity: 1, x: 0 }"
-            :duration="1000"
-            class="section-label"
-            >Galeri</span
+            :duration="600"
+            class="inline-block bg-[#A855F7] rounded-xl border-[3px] border-[#1A1A1A] px-5 py-2 font-black text-xs text-white uppercase tracking-[0.2em] mb-6 shadow-[5px_5px_0_0_#1A1A1A]"
           >
-          <p
+            Portfolio
+          </span>
+          <h2
             v-motion
-            :initial="{ opacity: 0, y: 50 }"
+            :initial="{ opacity: 0, y: 30 }"
             :visible-once="{ opacity: 1, y: 0 }"
-            :duration="1000"
-            class="text-[#8C7B6B] text-base max-w-xs leading-relaxed"
+            :duration="700"
+            class="font-black text-5xl sm:text-7xl text-[#1A1A1A] leading-[0.85] tracking-tighter"
           >
-            Sebagian hasil karya terbaik kami untuk pelanggan Chaya Collection.
-          </p>
+            Kurasi Karya<br />
+            <span class="italic text-[#4B5563]">Terbaik.</span>
+          </h2>
         </div>
-        <!-- <a
-          href="https://wa.me/6281234567890?text=Halo,+saya+ingin+melihat+katalog+lengkap+Chaya+Collection"
-          target="_blank"
-          class="shrink-0 inline-flex items-center gap-2 border-2 border-[#1A1208] text-[#1A1208] px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#1A1208] hover:text-[#FBF7F0] transition-all"
+        <p
+          v-motion
+          :initial="{ opacity: 0, y: 20 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="700"
+          class="text-[#4B5563] text-lg max-w-sm leading-relaxed font-bold border-l-[6px] border-[#FFD93D] pl-6"
         >
-          Lihat Katalog Lengkap
-          <i class="bi bi-arrow-right"></i>
-        </a> -->
+          Eksplorasi hasil jahitan Chaya Atelier. Setiap helai benang
+          menceritakan dedikasi kami pada kualitas.
+        </p>
       </div>
 
-      <!-- Bento Grid -->
-      <div
-        class="grid grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4"
-        style="grid-template-rows: auto"
-      >
+      <!-- Bento-style Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="(item, i) in items"
           :key="i"
           v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="group relative overflow-hidden rounded-2xl cursor-pointer aspect-3/4 lg:aspect-4/3"
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :visible-once="{ opacity: 1, scale: 1 }"
+          :duration="600"
+          :delay="i * 100"
+          class="group relative overflow-hidden rounded-[2.5rem] border-[4px] border-[#1A1A1A] cursor-pointer shadow-[12px_12px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[12px] hover:translate-y-[12px] transition-all duration-300"
         >
-          <!-- Background placeholder — ganti dengan <NuxtImg> -->
-          <NuxtImg
-            :src="item.image"
-            width="600"
-            loading="lazy"
-            placeholder
-            format="webp"
-            :alt="item.label"
-            class="w-full h-full object-cover"
-          />
+          <!-- Image Wrapper with Color Overlay on Hover -->
+          <div class="aspect-[4/5] relative overflow-hidden">
+            <NuxtImg
+              :src="item.image"
+              width="600"
+              loading="lazy"
+              placeholder
+              format="webp"
+              :alt="item.label"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+            />
 
-          <!-- Bottom label — slides up on hover -->
+            <!-- Hover Overlay Gradient -->
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"
+            ></div>
+          </div>
+
+          <!-- Label Tag - Floating Style -->
           <div
-            class="absolute bottom-0 left-0 right-0 z-10 p-3 lg:p-5 group-hover:-translate-y-1 transition-transform duration-300"
+            class="absolute bottom-6 left-6 right-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300"
           >
             <div
-              class="bg-[#1A1208]/80 backdrop-blur-sm rounded-lg lg:rounded-xl px-4 py-2 border border-white/10"
+              :class="[
+                'rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-4 flex items-center justify-between gap-4 shadow-[5px_5px_0_0_#1A1A1A]',
+                item.color,
+              ]"
             >
-              <div class="flex items-center justify-between gap-3">
-                <div>
-                  <p
-                    class="font-display font-600 text-[#FBF7F0] text-sm leading-snug"
-                  >
-                    {{ item.label }}
-                  </p>
-                </div>
-                <div
-                  class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center shrink-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                >
-                  <i class="bi bi-arrow-up-right text-white text-sm"></i>
-                </div>
+              <span
+                class="font-black text-[#1A1A1A] text-lg uppercase tracking-tight"
+              >
+                {{ item.label }}
+              </span>
+              <div
+                class="w-10 h-10 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shrink-0"
+              >
+                <i class="bi bi-arrow-up-right text-[#1A1A1A] font-bold"></i>
               </div>
             </div>
           </div>
+
+          <!-- Quick Info Badge (Top Right) -->
+          <div class="absolute top-5 right-5">
+            <div
+              class="bg-white border-[2px] border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
+            >
+              NEW WORK
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Discovery Bar -->
+      <div class="mt-16 flex flex-wrap justify-center gap-4">
+        <div
+          v-for="tag in ['#Casual', '#Elegant', '#Modern', '#Tradisional']"
+          :key="tag"
+          class="bg-white border-[2px] border-[#1A1A1A] px-6 py-2 rounded-full font-black text-sm text-[#1A1A1A] hover:bg-[#B4E4FF] transition-colors cursor-default"
+        >
+          {{ tag }}
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Menambahkan transisi halus untuk grayscale */
+.grayscale {
+  filter: grayscale(100%) contrast(1.1);
+}
+.group:hover .grayscale {
+  filter: grayscale(0%) contrast(1);
+}
+</style>

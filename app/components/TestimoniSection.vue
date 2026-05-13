@@ -5,9 +5,9 @@ const testimoni = [
     role: "Pelanggan Setia",
     location: "Matesih",
     rating: 5,
-    text: "Sudah langganan lebih dari 5 tahun di Chaya Collection. Hasilnya selalu rapi dan sesuai dengan keinginan. Penjahitnya juga ramah dan sabar menjelaskan pilihan bahan.",
+    text: "Sudah langganan lebih dari 5 tahun di Chaya Atelier. Hasilnya selalu rapi dan sesuai dengan keinginan. Penjahitnya juga ramah dan sabar menjelaskan pilihan bahan.",
     initials: "SR",
-    color: "#C9954C",
+    color: "bg-[#B1AFFF]", // Lavender
   },
   {
     name: "Budi Santoso",
@@ -16,7 +16,7 @@ const testimoni = [
     rating: 5,
     text: "Pesan seragam kantor 20 pcs, hasilnya memuaskan dan tepat waktu! Harga juga kompetitif dibanding tempat lain. Pasti akan pesan lagi.",
     initials: "BS",
-    color: "#8C7B6B",
+    color: "bg-[#B4E4FF]", // Mint
   },
   {
     name: "Dewi Lestari",
@@ -25,7 +25,7 @@ const testimoni = [
     rating: 5,
     text: "Baju pengantin saya dibuat di sini. Hasilnya luar biasa cantik! Penjahitnya memahami selera saya dengan baik. Sangat recommended!",
     initials: "DL",
-    color: "#D4A853",
+    color: "bg-[#FFD93D]", // Yellow
   },
   {
     name: "Ahmad Fauzi",
@@ -34,135 +34,201 @@ const testimoni = [
     rating: 4,
     text: "Beli keperluan jahit di toko ini lengkap banget. Dari benang sampai kain tersedia. Harganya juga masuk akal dan penjualnya helpful.",
     initials: "AF",
-    color: "#6B8C7B",
+    color: "bg-[#B4E4FF]", // Mint
   },
   {
     name: "Nurul Hidayah",
     role: "Pelanggan Setia",
     location: "Jaten",
     rating: 5,
-    text: "Jahit gamis koleksi lebaran selalu di Chaya. Kualitas jahitannya memang beda, lebih rapi dan nyaman dipakai. Terima kasih Chaya Collection!",
+    text: "Jahit gamis koleksi lebaran selalu di Chaya. Kualitas jahitannya memang beda, lebih rapi dan nyaman dipakai. Terima kasih Chaya Atelier!",
     initials: "NH",
-    color: "#9C6B4C",
+    color: "bg-[#B1AFFF]", // Lavender
   },
 ];
 </script>
 
 <template>
-  <section class="bg-[#FBF7F0] py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section
+    id="testimoni"
+    class="bg-[#F0F0F0] py-20 lg:py-28 relative overflow-hidden"
+  >
+    <!-- Decorative Pattern -->
+    <div
+      class="nb-grid-bg-dark absolute inset-0 opacity-[0.03] pointer-events-none"
+    ></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Section Header -->
-      <div class="flex items-center gap-6 mb-14">
-        <span
-          v-motion
-          :initial="{ opacity: 0, x: -50 }"
-          :visible-once="{ opacity: 1, x: 0 }"
-          :duration="1000"
-          class="section-label"
-          >Testimoni</span
-        >
+      <div
+        class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-10 mb-16"
+      >
+        <div class="max-w-2xl">
+          <span
+            v-motion
+            :initial="{ opacity: 0, x: -30 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="600"
+            class="inline-block bg-[#FFD93D] rounded-xl border-[3px] border-[#1A1A1A] px-5 py-2 font-black text-xs text-[#1A1A1A] uppercase tracking-[0.2em] mb-6 shadow-[5px_5px_0_0_#1A1A1A]"
+          >
+            Testimonials
+          </span>
+          <h2
+            v-motion
+            :initial="{ opacity: 0, y: 30 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :duration="700"
+            class="font-black text-5xl sm:text-7xl text-[#1A1A1A] leading-[0.85] tracking-tighter"
+          >
+            Cerita Dari<br />
+            <span class="text-[#A855F7]">Klien Kami.</span>
+          </h2>
+        </div>
         <p
           v-motion
-          :initial="{ opacity: 0, y: 50 }"
+          :initial="{ opacity: 0, y: 20 }"
           :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="text-[#8C7B6B] text-base max-w-xs leading-relaxed"
+          :duration="700"
+          class="text-[#4B5563] text-lg max-w-sm leading-relaxed font-bold border-l-[6px] border-[#B1AFFF] pl-6"
         >
-          Apa kata pelanggan kami yang telah mempercayakan kebutuhan jahit
-          mereka.
+          Kepercayaan pelanggan adalah prioritas kami dalam setiap tusukan
+          jarum.
         </p>
       </div>
 
-      <!-- Scrollable testimonials -->
-      <div class="testi-track pb-4">
+      <!-- Testimonials Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div
           v-for="(item, i) in testimoni"
           :key="i"
           v-motion
-          :initial="{ opacity: 0, y: 100 }"
+          :initial="{ opacity: 0, y: 50 }"
           :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="testi-card bg-white border border-[#E8D8C0] rounded-3xl p-7 card-hover"
+          :duration="600"
+          :delay="i * 100"
+          class="bg-white rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
         >
-          <!-- Rating -->
-          <div class="flex gap-1 mb-5">
-            <i
-              v-for="s in 5"
-              :key="s"
-              :class="[
-                'bi text-base',
-                s <= item.rating
-                  ? 'bi-star-fill text-[#C9954C]'
-                  : 'bi-star text-[#E8D8C0]',
-              ]"
-            ></i>
+          <!-- Rating & Quote Icon -->
+          <div class="flex justify-between items-start mb-6">
+            <div class="flex gap-1">
+              <i
+                v-for="s in 5"
+                :key="s"
+                :class="[
+                  'bi text-lg',
+                  s <= item.rating
+                    ? 'bi-star-fill text-[#FFD93D]'
+                    : 'bi-star text-[#E5E7EB]',
+                ]"
+              ></i>
+            </div>
+            <div
+              class="w-10 h-10 bg-[#B1AFFF] border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shadow-[3px_3px_0_0_#1A1A1A]"
+            >
+              <i class="bi bi-quote text-[#1A1A1A] text-xl"></i>
+            </div>
           </div>
 
-          <!-- Quote -->
-          <p class="text-[#2D2416] text-sm leading-relaxed mb-6">
+          <!-- Text -->
+          <p
+            class="text-[#1A1A1A] text-base leading-relaxed mb-8 font-bold italic"
+          >
             "{{ item.text }}"
           </p>
 
-          <!-- Author -->
-          <div class="flex items-center gap-3 pt-5 border-t border-[#F0E8D8]">
+          <!-- Author Info -->
+          <div
+            class="flex items-center gap-4 pt-6 border-t-2 border-dashed border-[#1A1A1A]/10"
+          >
             <div
-              class="w-10 h-10 rounded-full flex items-center justify-center text-[#FBF7F0] text-sm font-bold shrink-0"
-              :style="`background-color: ${item.color}`"
+              :class="[
+                'w-14 h-14 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center text-[#1A1A1A] text-xl font-black shrink-0 shadow-[4px_4px_0_0_#1A1A1A]',
+                item.color,
+              ]"
             >
               {{ item.initials }}
             </div>
             <div>
-              <div class="text-sm font-semibold text-[#1A1208]">
+              <div
+                class="text-sm font-black text-[#1A1A1A] uppercase tracking-widest"
+              >
                 {{ item.name }}
               </div>
-              <div class="text-xs text-[#8C7B6B]">
-                {{ item.role }} · {{ item.location }}
+              <div
+                class="text-[10px] font-black text-[#6B7280] uppercase tracking-wider"
+              >
+                {{ item.role }} <span class="text-[#A855F7] mx-1">•</span>
+                {{ item.location }}
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Scroll hint on mobile -->
-      <p class="mt-4 text-center text-xs text-[#8C7B6B] sm:hidden">
-        <i class="bi bi-arrow-left-right mr-1"></i>Geser untuk melihat lebih
-      </p>
-
-      <!-- Overall rating -->
+      <!-- Stats Summary Card -->
       <div
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
+        :initial="{ opacity: 0, y: 50 }"
         :visible-once="{ opacity: 1, y: 0 }"
-        :duration="1000"
-        class="mt-12 bg-[#1A1208] rounded-3xl p-8 flex flex-col sm:flex-row items-center justify-between gap-6"
+        :duration="700"
+        class="mt-16 bg-[#B4E4FF] rounded-[2.5rem] border-[4px] border-[#1A1A1A] p-10 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-[15px_15px_0_0_#1A1A1A]"
       >
-        <div>
-          <div class="font-display text-5xl font-800 text-[#C9954C]">4.9</div>
-          <div class="flex gap-1 mt-2">
-            <i
-              v-for="s in 5"
-              :key="s"
-              class="bi bi-star-fill text-[#C9954C] text-sm"
-            ></i>
+        <div class="flex flex-col sm:flex-row items-center gap-8">
+          <div class="relative">
+            <div
+              class="font-black text-8xl text-[#1A1A1A] leading-none tracking-tighter"
+            >
+              4.9
+            </div>
+            <div
+              class="absolute -top-4 -right-4 bg-[#FFD93D] border-[2px] border-[#1A1A1A] px-3 py-1 rounded-lg rotate-12 font-black text-xs"
+            >
+              EXCELLENT
+            </div>
           </div>
-          <div class="text-[#FBF7F0]/60 text-sm mt-1">
-            Rata-rata rating dari 100+ ulasan
+          <div class="text-center sm:text-left">
+            <div class="flex justify-center sm:justify-start gap-1 mb-3">
+              <i
+                v-for="s in 5"
+                :key="s"
+                class="bi bi-star-fill text-[#1A1A1A] text-2xl"
+              ></i>
+            </div>
+            <div
+              class="text-[#1A1A1A] text-sm font-black uppercase tracking-[0.2em]"
+            >
+              Rata-rata dari 100+ ulasan nyata
+            </div>
           </div>
         </div>
-        <div class="text-center sm:text-right">
-          <p class="text-[#FBF7F0]/80 text-sm mb-4 max-w-xs">
-            Bergabunglah dengan ratusan pelanggan puas Chaya Collection!
+
+        <div class="flex flex-col items-center lg:items-end gap-5">
+          <p
+            class="text-[#1A1A1A] text-lg font-bold text-center lg:text-right max-w-xs leading-tight italic"
+          >
+            "Kualitas jahitan premium untuk setiap momen spesial Anda."
           </p>
           <a
-            :href="contactInfo.whatsapp"
+            href="https://wa.me/62895629233434"
             target="_blank"
-            class="inline-flex items-center gap-2 bg-[#C9954C] text-[#1A1208] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#E8B96A] transition-colors"
+            class="group inline-flex items-center gap-3 bg-[#1A1A1A] rounded-2xl px-10 py-5 font-black text-white uppercase tracking-widest hover:bg-[#A855F7] transition-all duration-300 shadow-[8px_8px_0_0_#FFD93D]"
           >
-            <i class="bi bi-whatsapp"></i>
             Pesan Sekarang
+            <i
+              class="bi bi-arrow-right-circle-fill text-xl group-hover:translate-x-2 transition-transform"
+            ></i>
           </a>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.nb-grid-bg-dark {
+  background-image:
+    linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+</style>

@@ -6,14 +6,13 @@ import {
 } from "@vueuse/core";
 
 const stats = [
-  { value: 25, suffix: "+", label: "Tahun Berpengalaman" },
-  { value: 1000, suffix: "+", label: "Pelanggan Puas" },
-  { value: 5000, suffix: "+", label: "Jahitan Selesai" },
-  { value: 100, suffix: "%", label: "Dikerjakan Manual" },
+  { value: 25, suffix: "+", label: "Tahun Pengalaman" },
+  { value: 1000, suffix: "+", label: "Pelanggan Setia" },
+  { value: 5000, suffix: "+", label: "Produk Selesai" },
+  { value: 100, suffix: "%", label: "Handmade Quality" },
 ];
 
 const sources = stats.map(() => ref(0));
-
 const outputs = sources.map((source) =>
   useTransition(source, {
     duration: 4000,
@@ -44,292 +43,230 @@ onMounted(() => {
 <template>
   <section
     id="beranda"
-    class="min-h-dvh pt-12 lg:pt-14 bg-[#FBF7F0] relative overflow-hidden"
+    class="min-h-dvh pt-16 lg:pt-20 bg-[#F0F0F0] relative overflow-hidden"
   >
+    <!-- Decorative background grid - Menggunakan garis hitam tipis -->
+    <div
+      class="nb-grid-bg absolute inset-0 opacity-[0.05] pointer-events-none"
+    ></div>
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Left Content -->
+        <!-- Left Column -->
         <div class="space-y-8">
-          <!-- Badge -->
-          <div
-            v-motion
-            :initial="{ opacity: 0, x: -100 }"
-            :enter="{ opacity: 1, x: 0 }"
-            :duration="1000"
-            class="inline-flex items-center gap-2 bg-[#1A1208] text-[#C9954C] px-4 py-2 rounded-full text-xs md:text-sm font-semibold"
-          >
-            <i class="bi bi-patch-check-fill"></i>
-            Sejak 2001
-          </div>
-
           <!-- Headline -->
           <div>
             <h1
               v-motion
-              :initial="{ opacity: 0, x: -100 }"
-              :enter="{ opacity: 1, x: 0 }"
+              :initial="{ opacity: 0, y: 40 }"
+              :enter="{ opacity: 1, y: 0 }"
               :delay="200"
-              :duration="1000"
-              class="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold text-[#1A1208] leading-[1.1] mb-4"
+              :duration="700"
+              class="font-black text-6xl sm:text-7xl lg:text-8xl text-[#1A1A1A] leading-[0.9] tracking-tighter mb-6"
             >
-              Jahitan Rapi,
-              <span class="italic text-[#C9954C]">Hasil</span>
-              <br />
-              Memuaskan
+              Jahitan<br />
+              <span class="relative inline-block">
+                <span class="relative z-10 italic">Presisi,</span>
+                <!-- Highlight menggunakan Lavender -->
+                <span
+                  class="absolute bottom-2 left-0 right-0 h-6 bg-[#B1AFFF] -z-0 rounded-lg border-2 border-[#1A1A1A]"
+                ></span>
+              </span>
+              <br />Gaya Terkini
             </h1>
             <p
               v-motion
-              :initial="{ opacity: 0, x: -100 }"
-              :enter="{ opacity: 1, x: 0 }"
+              :initial="{ opacity: 0, y: 30 }"
+              :enter="{ opacity: 1, y: 0 }"
               :delay="400"
-              :duration="1000"
-              class="text-[#8C7B6B] text-lg leading-relaxed max-w-md"
+              :duration="700"
+              class="text-[#4B5563] text-xl leading-relaxed max-w-md font-bold border-l-[6px] border-[#B4E4FF] pl-5"
             >
-              Kami melayani jasa jahit custom, permak pakaian, seragam, serta
-              menyediakan berbagai perlengkapan jahit lengkap di Matesih,
-              Karanganyar.
+              Wujudkan pakaian impian Anda dengan sentuhan ahli di Chaya
+              Atelier. Custom tailoring, modifikasi, dan desain eksklusif di
+              pusat Matesih.
             </p>
           </div>
 
           <!-- CTA Buttons -->
           <div
             v-motion
-            :initial="{ opacity: 0, x: -100 }"
-            :enter="{ opacity: 1, x: 0 }"
+            :initial="{ opacity: 0, y: 20 }"
+            :enter="{ opacity: 1, y: 0 }"
             :delay="600"
-            :duration="1000"
-            class="flex flex-col sm:flex-row gap-3"
+            :duration="600"
+            class="flex flex-col sm:flex-row gap-5"
           >
+            <!-- Primary CTA - Bright Yellow -->
             <a
-              href="https://wa.me/62895629233434?text=Halo+Chaya+Collection,+saya+ingin+konsultasi+jahitan..."
+              href="https://wa.me/62895629233434"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-flex items-center justify-center gap-2.5 bg-[#1A1208] text-[#FBF7F0] px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#C9954C] hover:text-[#1A1208] transition-all duration-200 group"
+              class="inline-flex items-center justify-center gap-3 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
             >
-              <i
-                class="bi bi-whatsapp text-lg group-hover:scale-110 transition-transform"
-              ></i>
-              Konsultasi Gratis
+              <i class="bi bi-chat-heart-fill text-xl"></i>
+              Konsultasi Desain
             </a>
+            <!-- Secondary CTA - Mint Green -->
             <a
               href="#layanan"
-              class="inline-flex items-center justify-center gap-2 border-2 border-[#1A1208] text-[#1A1208] px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1A1208] hover:text-[#FBF7F0] transition-all duration-200"
+              class="inline-flex items-center justify-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
             >
-              Lihat Layanan
-              <i class="bi bi-arrow-down-right text-base"></i>
+              Eksplor Layanan
+              <i class="bi bi-arrow-up-right-circle-fill text-xl"></i>
             </a>
           </div>
 
-          <!-- Mini stats -->
+          <!-- Stats - Menggunakan Lavender Shadow -->
           <div
             ref="statsRef"
-            v-motion
-            :initial="{ opacity: 0 }"
-            :enter="{ opacity: 1 }"
-            :delay="800"
-            :duration="1000"
             class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4"
           >
             <div
               v-for="(stat, index) in stats"
               :key="stat.value"
               v-motion
-              :initial="{ opacity: 0, y: 100 }"
-              :enter="{ opacity: 1, y: 0 }"
-              :delay="200 * index"
-              :duration="1000"
-              class="text-center p-3 rounded-xl bg-white border border-[#E8D8C0]"
+              :initial="{ opacity: 0, scale: 0.8 }"
+              :enter="{ opacity: 1, scale: 1 }"
+              :delay="150 * index"
+              class="text-center p-5 bg-white border-[3px] rounded-2xl border-[#1A1A1A] shadow-[5px_5px_0_0_#B1AFFF] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-150"
             >
-              <div class="font-display font-700 text-2xl text-[#1A1208]">
+              <div class="font-black text-3xl text-[#1A1A1A] leading-none">
                 {{ Math.round(outputs[index].value) }}{{ stat.suffix }}
               </div>
-              <div class="text-xs text-[#8C7B6B] mt-0.5 leading-tight">
+              <div
+                class="text-[10px] font-black text-[#6B7280] mt-2 uppercase tracking-widest leading-tight"
+              >
                 {{ stat.label }}
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Right - Decorative Illustration Card -->
+        <!-- Right Column - Visual Card -->
         <div
           v-motion
-          :initial="{ opacity: 0, x: 100 }"
-          :enter="{ opacity: 1, x: 0 }"
-          :delay="1000"
-          :duration="1000"
+          :initial="{ opacity: 0, rotate: 5 }"
+          :enter="{ opacity: 1, rotate: 0 }"
+          :delay="300"
+          :duration="800"
           class="relative hidden lg:block"
         >
-          <!-- Main card -->
-          <div class="relative bg-[#1A1208] rounded-3xl p-10 overflow-hidden">
-            <!-- Pattern background inside card -->
-            <div class="absolute inset-0 opacity-10">
-              <svg
-                viewBox="0 0 400 400"
-                class="w-full h-full"
-                preserveAspectRatio="xMidYMid slice"
-              >
-                <pattern
-                  id="fab"
-                  x="0"
-                  y="0"
-                  width="40"
-                  height="40"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <path
-                    d="M 0 20 L 40 20 M 20 0 L 20 40"
-                    stroke="#C9954C"
-                    stroke-width="0.5"
-                    fill="none"
-                  />
-                  <circle cx="20" cy="20" r="2" fill="#C9954C" />
-                </pattern>
-                <rect width="400" height="400" fill="url(#fab)" />
-              </svg>
-            </div>
+          <!-- Main card - Lavender Base -->
+          <div
+            class="relative bg-[#B1AFFF] rounded-[3rem] border-[4px] border-[#1A1A1A] p-12 overflow-hidden shadow-[15px_15px_0_0_#1A1A1A]"
+          >
+            <!-- Dot pattern - Mint color dots -->
+            <div class="nb-dot-pattern-mint absolute inset-0 opacity-20"></div>
 
-            <!-- Center SVG illustration - sewing machine -->
             <div
-              class="relative z-10 flex flex-col items-center text-center space-y-6"
+              class="relative z-10 flex flex-col items-center text-center space-y-8"
             >
-              <div class="w-48 h-48 flex items-center justify-center">
-                <svg viewBox="0 0 200 200" class="w-full h-full">
-                  <!-- Sewing machine illustration -->
-                  <!-- Body -->
+              <!-- SVG Sewing Machine - Re-colored for Modern Atelier -->
+              <div
+                class="w-56 h-56 flex items-center justify-center transform hover:scale-110 transition-transform duration-300"
+              >
+                <svg
+                  viewBox="0 0 200 200"
+                  class="w-full h-full filter drop-shadow-[4px_4px_0_#1A1A1A]"
+                >
                   <rect
                     x="20"
                     y="80"
                     width="160"
                     height="90"
                     rx="12"
-                    fill="#C9954C"
+                    fill="#FFD93D"
+                    stroke="#1A1A1A"
+                    stroke-width="4"
                   />
-                  <!-- Top arch -->
                   <path
                     d="M 60 80 Q 60 30 110 30 Q 155 30 155 80"
-                    fill="#C9954C"
-                    stroke="none"
+                    fill="#FFD93D"
+                    stroke="#1A1A1A"
+                    stroke-width="4"
                   />
-                  <!-- Arm highlight -->
-                  <path
-                    d="M 62 80 Q 62 38 110 38 Q 150 38 150 80"
-                    fill="#D4A853"
-                    stroke="none"
-                    stroke-width="0"
+                  <circle
+                    cx="145"
+                    cy="120"
+                    r="22"
+                    fill="#B4E4FF"
+                    stroke="#1A1A1A"
+                    stroke-width="4"
                   />
-                  <!-- Needle area -->
-                  <rect
-                    x="40"
-                    y="140"
-                    width="25"
-                    height="10"
-                    rx="3"
-                    fill="#1A1208"
-                  />
-                  <!-- Needle -->
-                  <line
-                    x1="52"
-                    y1="150"
-                    x2="52"
-                    y2="175"
-                    stroke="#FBF7F0"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                  />
-                  <!-- Wheel -->
-                  <circle cx="145" cy="120" r="22" fill="#1A1208" />
-                  <circle cx="145" cy="120" r="14" fill="#2D2416" />
-                  <circle cx="145" cy="120" r="5" fill="#C9954C" />
-                  <!-- Base -->
+                  <circle cx="145" cy="120" r="8" fill="#1A1A1A" />
                   <rect
                     x="10"
-                    y="168"
+                    y="170"
                     width="180"
-                    height="14"
-                    rx="7"
-                    fill="#8C7B6B"
-                  />
-                  <!-- Bobbin/thread on top -->
-                  <rect
-                    x="95"
-                    y="20"
-                    width="18"
-                    height="14"
-                    rx="7"
-                    fill="#FBF7F0"
-                    opacity="0.9"
-                  />
-                  <!-- Light reflection -->
-                  <ellipse
-                    cx="80"
-                    cy="100"
-                    rx="15"
-                    ry="8"
-                    fill="#E8B96A"
-                    opacity="0.4"
+                    height="15"
+                    rx="5"
+                    fill="#1A1A1A"
                   />
                 </svg>
               </div>
 
-              <div>
-                <p class="font-display italic text-[#C9954C] text-xl font-600">
-                  "Setiap jahitan adalah karya"
+              <!-- Artist Quote Card -->
+              <div
+                class="bg-white rounded-3xl border-[3px] border-[#1A1A1A] p-6 w-full shadow-[6px_6px_0_0_#1A1A1A]"
+              >
+                <p
+                  class="font-black italic text-[#1A1A1A] text-2xl leading-tight"
+                >
+                  "Fashion passes,<br />style remains."
                 </p>
-                <p class="text-[#FBF7F0]/60 text-sm mt-1">
-                  Chaya Collection — Matesih, Karanganyar
+                <p
+                  class="text-[#A855F7] text-[10px] font-black uppercase tracking-[0.2em] mt-3"
+                >
+                  Chaya Atelier — Est. 1999
                 </p>
               </div>
 
-              <!-- Floating tags -->
+              <!-- Creative Tags -->
               <div class="flex flex-wrap gap-2 justify-center">
                 <span
-                  v-for="tag in [
-                    'Jahit Custom',
-                    'Permak',
-                    'Seragam',
-                    'Alat Jahit',
-                  ]"
+                  v-for="tag in ['Custom Fit', 'Upcycling', 'Bridal', 'Design']"
                   :key="tag"
-                  class="bg-[#FBF7F0]/10 text-[#FBF7F0] text-xs font-medium px-3 py-1.5 rounded-full backdrop-blur-md border border-[#FBF7F0]/20"
+                  class="bg-[#B4E4FF] rounded-xl border-[2px] border-[#1A1A1A] text-[#1A1A1A] text-[10px] font-black px-4 py-2 uppercase tracking-wider"
                 >
-                  {{ tag }}
+                  #{{ tag }}
                 </span>
               </div>
             </div>
           </div>
 
-          <!-- Floating accent cards -->
+          <!-- Floating Badges -->
           <div
-            class="absolute -bottom-6 -left-6 bg-[#C9954C] rounded-2xl p-5 shadow-xl"
+            class="absolute -bottom-8 -left-8 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] p-5 shadow-[6px_6px_0_0_#1A1A1A] -rotate-6"
           >
             <div class="flex items-center gap-3">
               <div
-                class="w-10 h-10 bg-[#1A1208] rounded-xl flex items-center justify-center"
+                class="w-12 h-12 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center"
               >
-                <i class="bi bi-star-fill text-[#C9954C] text-sm"></i>
+                <i class="bi bi-award-fill text-[#A855F7] text-2xl"></i>
               </div>
               <div>
                 <div
-                  class="font-display font-700 text-[#1A1208] text-lg leading-none"
+                  class="font-black text-[#1A1A1A] text-2xl leading-none tracking-tighter"
                 >
-                  4.9
+                  PREMIUM
                 </div>
-                <div class="text-[#1A1208]/70 text-xs">Rating Pelanggan</div>
+                <div
+                  class="text-[#1A1A1A]/70 text-[10px] font-black uppercase tracking-widest mt-1"
+                >
+                  Quality Garansi
+                </div>
               </div>
             </div>
           </div>
 
           <div
-            class="absolute -top-5 -right-5 bg-white rounded-2xl p-4 shadow-xl border border-[#E8D8C0]"
+            class="absolute -top-6 -right-6 bg-white rounded-2xl border-[3px] border-[#1A1A1A] p-4 shadow-[6px_6px_0_0_#B4E4FF] rotate-3"
           >
-            <div class="flex items-center gap-2">
-              <i class="bi bi-clock-history text-[#C9954C] text-xl"></i>
-              <div>
-                <div class="text-xs font-semibold text-[#1A1208]">
-                  Buka Setiap Hari
-                </div>
-                <div class="text-xs text-[#8C7B6B]">07.00 – 17.00 WIB</div>
-              </div>
+            <div
+              class="font-black text-[#1A1A1A] text-xs uppercase tracking-widest text-center"
+            >
+              OPEN FOR ORDERS
             </div>
           </div>
         </div>
@@ -337,3 +274,16 @@ onMounted(() => {
     </div>
   </section>
 </template>
+
+<style scoped>
+.nb-grid-bg {
+  background-image:
+    linear-gradient(#1a1a1a 1px, transparent 1px),
+    linear-gradient(90deg, #1a1a1a 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+.nb-dot-pattern-mint {
+  background-image: radial-gradient(circle, #b4e4ff 2px, transparent 2px);
+  background-size: 30px 30px;
+}
+</style>

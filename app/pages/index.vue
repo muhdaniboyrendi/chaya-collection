@@ -1,4 +1,9 @@
 <script setup>
+// Data kontak dipusatkan di sini jika ingin digunakan secara global
+const contactInfo = {
+  whatsapp: "https://wa.me/62895629233434",
+};
+
 useSeoMeta({
   title: "Chaya Collection — Jasa Jahit & Toko Alat Jahit Matesih, Karanganyar",
   description:
@@ -48,9 +53,12 @@ useSchemaOrg([
 </script>
 
 <template>
-  <div>
+  <div class="selection:bg-[#B1AFFF] selection:text-[#1A1A1A]">
+    <!-- Navigation -->
     <TheNavbar />
+
     <main>
+      <!-- Sections -->
       <HeroSection />
       <LayananSection />
       <GallerySection />
@@ -59,17 +67,42 @@ useSchemaOrg([
       <FaqSection />
       <ContactSection />
     </main>
+
+    <!-- Footer -->
     <TheFooter />
 
-    <!-- Floating WA Button -->
+    <!-- Floating WA Button (Neubrutalism Style) -->
     <a
       :href="contactInfo.whatsapp"
       target="_blank"
       rel="noopener noreferrer"
-      class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#25D366] rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform duration-200"
+      class="fixed bottom-8 right-8 z-40 w-16 h-16 bg-[#25D366] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[6px_6px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-200 group"
       aria-label="Chat WhatsApp"
     >
-      <i class="bi bi-whatsapp text-white text-2xl"></i>
+      <i
+        class="bi bi-whatsapp text-white text-3xl group-hover:scale-110 transition-transform"
+      ></i>
+
+      <!-- Tooltip / Label on Hover -->
+      <span
+        class="absolute right-20 bg-[#1A1A1A] text-white text-xs font-black py-2 px-4 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap uppercase tracking-widest border-2 border-[#1A1A1A] shadow-[4px_4px_0_0_#FFD93D]"
+      >
+        Tanya Sekarang
+      </span>
     </a>
   </div>
 </template>
+
+<style>
+/* Global Smooth Scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Typography Customization */
+body {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #1a1a1a;
+  -webkit-font-smoothing: antialiased;
+}
+</style>
