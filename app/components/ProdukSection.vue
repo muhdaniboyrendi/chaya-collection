@@ -53,6 +53,7 @@ const produkAlatJahit = [
             v-motion
             :initial="{ opacity: 0, x: -30 }"
             :visible-once="{ opacity: 1, x: 0 }"
+            :duration="600"
             class="inline-block bg-[#FFD93D] rounded-xl border-[3px] border-[#1A1A1A] px-5 py-2 font-black text-xs text-[#1A1A1A] uppercase tracking-[0.2em] shadow-[5px_5px_0_0_#1A1A1A]"
           >
             Supply & Tools
@@ -61,6 +62,7 @@ const produkAlatJahit = [
             v-motion
             :initial="{ opacity: 0, y: 30 }"
             :visible-once="{ opacity: 1, y: 0 }"
+            :duration="700"
             class="font-black text-5xl sm:text-6xl text-[#1A1A1A] leading-[0.9] tracking-tighter uppercase italic"
           >
             Lengkapi Kebutuhan<br />
@@ -76,6 +78,7 @@ const produkAlatJahit = [
           v-motion
           :initial="{ opacity: 0, y: 10 }"
           :visible-once="{ opacity: 1, y: 0 }"
+          :duration="700"
         >
           <button
             v-for="cat in kategoriProduk"

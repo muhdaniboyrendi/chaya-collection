@@ -33,12 +33,15 @@ function handleScroll() {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16 lg:h-20">
         <!-- Logo - Menggunakan Lavender sebagai identitas kreatif -->
-        <a href="#beranda" class="flex items-center gap-3 group">
-          <div
-            class="w-12 h-12 bg-[#B1AFFF] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[4px_4px_0_0_#1A1A1A] group-hover:shadow-none group-hover:translate-x-[4px] group-hover:translate-y-[4px] transition-all duration-150"
-          >
-            <i class="bi bi-scissors text-[#1A1A1A] text-xl"></i>
-          </div>
+        <NuxtLink to="/" class="flex items-center gap-3 group">
+          <NuxtImg
+            src="/icon.png"
+            width="100"
+            height="100"
+            loading="eager"
+            alt="Chaya Collection Logo"
+            class="w-13 h-13"
+          />
           <div class="leading-none">
             <div
               class="font-black text-2xl text-[#1A1A1A] leading-none tracking-tight italic"
@@ -51,7 +54,7 @@ function handleScroll() {
               Collection
             </div>
           </div>
-        </a>
+        </NuxtLink>
 
         <!-- Desktop Nav - Hover dengan Mint Green agar terasa segar -->
         <nav class="hidden lg:flex items-center gap-2">

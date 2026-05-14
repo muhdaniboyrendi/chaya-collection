@@ -214,7 +214,7 @@ const testimoni = [
           <a
             href="https://wa.me/62895629233434"
             target="_blank"
-            class="group inline-flex items-center gap-3 bg-[#1A1A1A] rounded-2xl px-10 py-5 font-black text-white uppercase tracking-widest hover:bg-[#A855F7] transition-all duration-300 shadow-[8px_8px_0_0_#FFD93D]"
+            class="group inline-flex items-center gap-3 bg-[#1A1A1A] rounded-2xl px-10 py-5 font-black text-white uppercase tracking-widest hover:bg-[#A855F7] transition-all shadow-[8px_8px_0_0_#FFD93D] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]"
           >
             Pesan Sekarang
             <i

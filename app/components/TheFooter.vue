@@ -34,11 +34,14 @@ const layanan = [
         <div class="lg:col-span-2">
           <!-- Logo -->
           <div class="flex items-center gap-4 mb-8">
-            <div
-              class="w-14 h-14 bg-[#1A1A1A] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[5px_5px_0_0_#A855F7]"
-            >
-              <i class="bi bi-scissors text-[#B4E4FF] text-2xl"></i>
-            </div>
+            <NuxtImg
+              src="/icon.png"
+              width="120"
+              height="120"
+              loading="eager"
+              alt="Chaya Collection Logo"
+              class="w-16 h-16"
+            />
             <div class="leading-none">
               <div
                 class="font-black text-3xl text-[#1A1A1A] leading-none tracking-tighter uppercase italic"
@@ -70,13 +73,13 @@ const layanan = [
             >
               <i class="bi bi-whatsapp text-white text-xl"></i>
             </a>
-            <a
+            <!-- <a
               href="#"
               class="w-12 h-12 bg-[#E4405F] rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shadow-[4px_4px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all"
               aria-label="Instagram"
             >
               <i class="bi bi-instagram text-white text-xl"></i>
-            </a>
+            </a> -->
           </div>
         </div>
 

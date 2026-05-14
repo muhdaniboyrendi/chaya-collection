@@ -25,7 +25,7 @@ useSeoMeta({
     "Jasa jahit & toko perlengkapan jahit terpercaya di Matesih, Karanganyar. 25+ tahun pengalaman. Layani jahit custom, seragam, permak, dan busana muslim.",
   ogType: "website",
   ogLocale: "id_ID",
-  ogImage: "/og-image.png",
+  ogImage: "https://chaya-collection.netlify.app/og-image.png",
   twitterCard: "summary_large_image",
   twitterImage: "/og-image.png",
 });
