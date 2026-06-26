@@ -51,11 +51,11 @@ onMounted(() => {
     ></div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div>
         <!-- Left Column -->
         <div class="space-y-8">
           <!-- Headline -->
-          <div>
+          <div class="md:text-center">
             <h1
               v-motion
               :initial="{ opacity: 0, x: -100 }"
@@ -66,7 +66,9 @@ onMounted(() => {
             >
               Jahitan
               <span class="relative inline-block">
-                <span class="relative z-10 italic text-[#A855F7]">Presisi,</span>
+                <span class="relative z-10 italic text-[#A855F7]"
+                  >Presisi,</span
+                >
               </span>
               <br />Gaya Terkini
             </h1>
@@ -76,7 +78,7 @@ onMounted(() => {
               :enter="{ opacity: 1, y: 0 }"
               :delay="400"
               :duration="700"
-              class="text-[#4B5563] text-xl leading-relaxed max-w-lg font-bold border-l-[6px] border-[#B4E4FF] pl-5"
+              class="text-[#4B5563] text-xl leading-relaxed max-w-3xl mx-auto font-bold pl-1"
             >
               Wujudkan pakaian impian Anda dengan sentuhan ahli di Chaya
               Atelier. Custom tailoring, modifikasi, dan desain eksklusif di
@@ -91,21 +93,21 @@ onMounted(() => {
             :enter="{ opacity: 1, y: 0 }"
             :delay="600"
             :duration="600"
-            class="flex flex-col sm:flex-row gap-5"
+            class="flex flex-col sm:flex-row justify-center gap-5"
           >
             <!-- Primary CTA - Bright Yellow -->
             <a
               href="https://wa.me/62895629233434"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-center gap-3 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
+              class="text-center gap-3 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200"
             >
               Konsultasi Desain
             </a>
             <!-- Secondary CTA - Mint Green -->
             <a
               href="#layanan"
-              class="text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] transition-all duration-200"
+              class="text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-8 py-5 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200"
             >
               Eksplor Layanan
             </a>
@@ -114,7 +116,7 @@ onMounted(() => {
           <!-- Stats - Menggunakan Lavender Shadow -->
           <div
             ref="statsRef"
-            class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4"
+            class="w-full max-w-3xl mx-auto grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4"
           >
             <div
               v-for="(stat, index) in stats"
@@ -133,134 +135,6 @@ onMounted(() => {
               >
                 {{ stat.label }}
               </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column - Visual Card -->
-        <div
-          v-motion
-          :initial="{ opacity: 0, rotate: 5 }"
-          :enter="{ opacity: 1, rotate: 0 }"
-          :delay="300"
-          :duration="800"
-          class="relative hidden lg:block"
-        >
-          <!-- Main card - Lavender Base -->
-          <div
-            class="relative bg-[#B1AFFF] rounded-[3rem] border-[4px] border-[#1A1A1A] p-12 overflow-hidden shadow-[15px_15px_0_0_#1A1A1A]"
-          >
-            <!-- Dot pattern - Mint color dots -->
-            <div class="nb-dot-pattern-mint absolute inset-0 opacity-20"></div>
-
-            <div
-              class="relative z-10 flex flex-col items-center text-center space-y-8"
-            >
-              <!-- SVG Sewing Machine - Re-colored for Modern Atelier -->
-              <div
-                class="w-56 h-56 flex items-center justify-center transform hover:scale-110 transition-transform duration-300"
-              >
-                <svg
-                  viewBox="0 0 200 200"
-                  class="w-full h-full filter drop-shadow-[4px_4px_0_#1A1A1A]"
-                >
-                  <rect
-                    x="20"
-                    y="80"
-                    width="160"
-                    height="90"
-                    rx="12"
-                    fill="#FFD93D"
-                    stroke="#1A1A1A"
-                    stroke-width="4"
-                  />
-                  <path
-                    d="M 60 80 Q 60 30 110 30 Q 155 30 155 80"
-                    fill="#FFD93D"
-                    stroke="#1A1A1A"
-                    stroke-width="4"
-                  />
-                  <circle
-                    cx="145"
-                    cy="120"
-                    r="22"
-                    fill="#B4E4FF"
-                    stroke="#1A1A1A"
-                    stroke-width="4"
-                  />
-                  <circle cx="145" cy="120" r="8" fill="#1A1A1A" />
-                  <rect
-                    x="10"
-                    y="170"
-                    width="180"
-                    height="15"
-                    rx="5"
-                    fill="#1A1A1A"
-                  />
-                </svg>
-              </div>
-
-              <!-- Artist Quote Card -->
-              <div
-                class="bg-white rounded-3xl border-[3px] border-[#1A1A1A] p-6 w-full shadow-[6px_6px_0_0_#1A1A1A]"
-              >
-                <p
-                  class="font-black italic text-[#1A1A1A] text-2xl leading-tight"
-                >
-                  "Fashion passes,<br />style remains."
-                </p>
-                <p
-                  class="text-[#A855F7] text-[10px] font-black uppercase tracking-[0.2em] mt-3"
-                >
-                  Chaya Collection — Est. 2001
-                </p>
-              </div>
-
-              <!-- Creative Tags -->
-              <div class="flex flex-wrap gap-2 justify-center">
-                <span
-                  v-for="tag in ['Custom Fit', 'Upcycling', 'Bridal', 'Design']"
-                  :key="tag"
-                  class="bg-[#B4E4FF] rounded-xl border-[2px] border-[#1A1A1A] text-[#1A1A1A] text-[10px] font-black px-4 py-2 uppercase tracking-wider"
-                >
-                  #{{ tag }}
-                </span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Floating Badges -->
-          <div
-            class="absolute -bottom-8 -left-8 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] p-5 shadow-[6px_6px_0_0_#1A1A1A] -rotate-6"
-          >
-            <div class="flex items-center gap-3">
-              <div
-                class="w-12 h-12 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center"
-              >
-                <i class="bi bi-award-fill text-[#A855F7] text-2xl"></i>
-              </div>
-              <div>
-                <div
-                  class="font-black text-[#1A1A1A] text-2xl leading-none tracking-tighter"
-                >
-                  PREMIUM
-                </div>
-                <div
-                  class="text-[#1A1A1A]/70 text-[10px] font-black uppercase tracking-widest mt-1"
-                >
-                  Quality Garansi
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div
-            class="absolute -top-6 -right-6 bg-white rounded-2xl border-[3px] border-[#1A1A1A] p-4 shadow-[6px_6px_0_0_#B4E4FF] rotate-3"
-          >
-            <div
-              class="font-black text-[#1A1A1A] text-xs uppercase tracking-widest text-center"
-            >
-              OPEN FOR ORDERS
             </div>
           </div>
         </div>

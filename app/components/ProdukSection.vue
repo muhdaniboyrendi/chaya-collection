@@ -3,7 +3,7 @@ const kategoriProduk = ["Semua", "Benang", "Gunting", "Jarum", "Aksesori"];
 
 const produkAlatJahit = [
   {
-    nama: "Benang Jahit High-Quality",
+    nama: "Benang Jahit",
     kategori: "Benang",
     harga: "Rp 5.000",
     image: "bi-pellet",
@@ -102,7 +102,7 @@ const produkAlatJahit = [
           :duration="700"
         >
           <div
-            class="group bg-white border-[4px] border-[#1A1A1A] rounded-[2.5rem] p-6 shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-300 relative"
+            class="group bg-white border-4 border-[#1A1A1A] rounded-[2.5rem] p-6 shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-300 relative"
           >
             <!-- Product Display -->
             <div
@@ -133,7 +133,7 @@ const produkAlatJahit = [
                 </span>
               </div>
               <h3
-                class="text-xl font-black text-[#1A1A1A] leading-tight uppercase tracking-tighter min-h-[3rem]"
+                class="text-xl font-black text-[#1A1A1A] leading-tight uppercase tracking-tighter min-h-12"
               >
                 {{ produk.nama }}
               </h3>
@@ -144,48 +144,10 @@ const produkAlatJahit = [
                   class="text-2xl font-black text-[#1A1A1A] italic tracking-tighter"
                   >{{ produk.harga }}</span
                 >
-                <button
-                  class="w-12 h-12 bg-[#FFD93D] border-[3px] border-[#1A1A1A] rounded-xl flex items-center justify-center shadow-[4px_4px_0_0_#1A1A1A] group-hover:bg-[#B1AFFF] transition-colors"
-                >
-                  <i class="bi bi-whatsapp text-xl"></i>
-                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <!-- Store Note / Call to Action -->
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 50 }"
-        :visible-once="{ opacity: 1, y: 0 }"
-        :duration="700"
-        class="mt-20 p-10 bg-[#B4E4FF] border-[4px] border-[#1A1A1A] rounded-[3rem] shadow-[12px_12px_0_0_#1A1A1A] flex flex-col lg:flex-row items-center gap-10"
-      >
-        <div
-          class="w-24 h-24 bg-white border-[4px] border-[#1A1A1A] rounded-[2rem] flex items-center justify-center flex-shrink-0 shadow-[6px_6px_0_0_#A855F7]"
-        >
-          <i class="bi bi-bag-heart-fill text-4xl text-[#A855F7]"></i>
-        </div>
-        <div class="text-center lg:text-left space-y-2">
-          <h4
-            class="text-3xl font-black text-[#1A1A1A] uppercase tracking-tighter italic leading-none"
-          >
-            Butuh perlengkapan lain?
-          </h4>
-          <p class="text-lg font-bold text-[#1A1A1A]/70 max-w-xl">
-            Kunjungi toko fisik kami untuk melihat ratusan jenis benang,
-            kancing, dan aksesori jahit lainnya dengan harga terbaik.
-          </p>
-        </div>
-        <a
-          href="#kontak"
-          class="lg:ml-auto px-12 py-5 bg-[#1A1A1A] text-white font-black rounded-2xl shadow-[8px_8px_0_0_#FFD93D] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all uppercase tracking-[0.15em] italic flex items-center gap-3"
-        >
-          <span>Chat Admin</span>
-          <i class="bi bi-arrow-right"></i>
-        </a>
       </div>
     </div>
   </section>

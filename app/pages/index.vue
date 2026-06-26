@@ -76,7 +76,7 @@ useSchemaOrg([
       <GallerySection />
       <ProdukSection />
       <TentangSection />
-      <TestimoniSection />
+      <!-- <TestimoniSection /> -->
       <FaqSection />
       <ContactSection />
     </main>

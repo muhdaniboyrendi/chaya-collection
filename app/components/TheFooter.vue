@@ -19,9 +19,7 @@ const layanan = [
 </script>
 
 <template>
-  <footer
-    class="bg-white border-t-[4px] border-[#1A1A1A] relative overflow-hidden"
-  >
+  <footer class="bg-white border-t-4 border-[#1A1A1A] relative overflow-hidden">
     <!-- Decorative Pattern -->
     <div
       class="absolute top-0 right-0 w-64 h-64 bg-[#B4E4FF] opacity-20 rounded-full blur-3xl -mr-32 -mt-32"
@@ -86,7 +84,7 @@ const layanan = [
         <!-- Nav -->
         <div>
           <h4
-            class="inline-block bg-[#FFD93D] px-4 py-1 rounded-lg border-[2px] border-[#1A1A1A] text-xs font-black uppercase tracking-widest text-[#1A1A1A] mb-8 shadow-[3px_3px_0_0_#1A1A1A]"
+            class="inline-block bg-[#FFD93D] px-4 py-1 rounded-lg border-2 border-[#1A1A1A] text-xs font-black uppercase tracking-widest text-[#1A1A1A] mb-8 shadow-[3px_3px_0_0_#1A1A1A]"
           >
             Eksplorasi
           </h4>
@@ -108,7 +106,7 @@ const layanan = [
         <!-- Services -->
         <div>
           <h4
-            class="inline-block bg-[#B1AFFF] px-4 py-1 rounded-lg border-[2px] border-[#1A1A1A] text-xs font-black uppercase tracking-widest text-[#1A1A1A] mb-8 shadow-[3px_3px_0_0_#1A1A1A]"
+            class="inline-block bg-[#B1AFFF] px-4 py-1 rounded-lg border-2 border-[#1A1A1A] text-xs font-black uppercase tracking-widest text-[#1A1A1A] mb-8 shadow-[3px_3px_0_0_#1A1A1A]"
           >
             Layanan Kami
           </h4>
@@ -131,34 +129,14 @@ const layanan = [
 
     <!-- Bottom bar -->
     <div
-      class="border-t-[4px] border-[#1A1A1A] bg-[#B4E4FF] px-4 sm:px-6 lg:px-8 py-8"
+      class="border-t-4 border-[#1A1A1A] bg-[#B4E4FF] px-4 sm:px-6 lg:px-8 py-8"
     >
-      <div
-        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6"
-      >
-        <div class="flex flex-col md:flex-row items-center gap-2 md:gap-6">
-          <span
-            class="text-sm font-black text-[#1A1A1A] uppercase tracking-tighter"
-          >
-            © {{ year }} Chaya Collection.
-          </span>
-          <span class="hidden md:block text-[#1A1A1A]/30">|</span>
-          <span
-            class="text-sm font-black text-[#1A1A1A] uppercase tracking-tighter italic"
-          >
-            Dibuat dengan ❤️ di Matesih
-          </span>
-        </div>
-
-        <div
-          class="flex items-center gap-3 bg-white border-[3px] border-[#1A1A1A] px-5 py-2 rounded-2xl shadow-[4px_4px_0_0_#1A1A1A]"
+      <div class="max-w-7xl mx-auto text-center">
+        <span
+          class="text-sm font-black text-[#1A1A1A] uppercase tracking-tighter"
         >
-          <div class="w-3 h-3 bg-[#25D366] rounded-full animate-pulse"></div>
-          <span
-            class="text-xs font-black text-[#1A1A1A] uppercase tracking-widest"
-            >Tersedia untuk pesanan baru</span
-          >
-        </div>
+          © {{ year }} Chaya Collection. All Rights Reserved
+        </span>
       </div>
     </div>
   </footer>

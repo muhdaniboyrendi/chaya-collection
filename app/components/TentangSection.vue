@@ -62,7 +62,7 @@ const keunggulan = [
               <span class="relative z-10 italic">Ribuan</span>
               <!-- Highlight Lavender -->
               <span
-                class="absolute bottom-2 left-0 right-0 h-6 bg-[#B1AFFF] -z-0 border-2 border-[#1A1A1A] rounded-lg"
+                class="absolute bottom-2 left-0 right-0 h-6 bg-[#B1AFFF] z-0 border-2 border-[#1A1A1A] rounded-lg"
               ></span>
             </span>
             <br />Karya Nyata
@@ -121,58 +121,6 @@ const keunggulan = [
               </div>
             </div>
           </div>
-
-          <!-- Location & Hours Card - Lavender Style -->
-          <div
-            v-motion
-            :initial="{ opacity: 0, y: 30 }"
-            :visible-once="{ opacity: 1, y: 0 }"
-            :duration="700"
-            class="bg-[#B1AFFF] rounded-[2rem] border-[4px] border-[#1A1A1A] p-8 space-y-6 shadow-[10px_10px_0_0_#1A1A1A]"
-          >
-            <div class="flex items-start gap-5">
-              <div
-                class="w-12 h-12 bg-[#FFD93D] border-[3px] border-[#1A1A1A] rounded-xl flex items-center justify-center shrink-0 shadow-[3px_3px_0_0_#1A1A1A]"
-              >
-                <i class="bi bi-geo-alt-fill text-[#1A1A1A] text-xl"></i>
-              </div>
-              <div>
-                <div
-                  class="text-[#1A1A1A] font-black text-sm mb-1 uppercase tracking-widest"
-                >
-                  Studio Kami
-                </div>
-                <div
-                  class="text-[#1A1A1A]/80 text-sm leading-relaxed font-bold"
-                >
-                  Banjarsari RT 5/RW 6 No. 09, Koripan,<br />
-                  Matesih, Karanganyar, Jawa Tengah 57781
-                </div>
-              </div>
-            </div>
-
-            <div
-              class="border-t-[3px] border-[#1A1A1A]/10 pt-6 flex items-center gap-5"
-            >
-              <div
-                class="w-12 h-12 bg-[#B4E4FF] border-[3px] border-[#1A1A1A] rounded-xl flex items-center justify-center shrink-0 shadow-[3px_3px_0_0_#1A1A1A]"
-              >
-                <i class="bi bi-clock-fill text-[#1A1A1A] text-xl"></i>
-              </div>
-              <div>
-                <div
-                  class="text-[#1A1A1A] font-black text-sm mb-0.5 uppercase tracking-widest"
-                >
-                  Jam Operasional
-                </div>
-                <div
-                  class="text-[#1A1A1A]/80 text-sm font-bold uppercase tracking-tight"
-                >
-                  Setiap Hari — 07.00 - 17.00 WIB
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         <!-- Right - Keunggulan grid -->
@@ -188,10 +136,10 @@ const keunggulan = [
           >
             <div
               :class="[
-                'h-full p-8 rounded-[2rem] border-[4px] border-[#1A1A1A] transition-all duration-200',
+                'h-full p-8 rounded-4xl border-4 border-[#1A1A1A] transition-all duration-200',
                 i % 2 === 0
-                  ? 'bg-[#FFD93D] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
-                  : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]',
+                  ? 'bg-[#FFD93D] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2'
+                  : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-2 hover:translate-y-2',
               ]"
             >
               <div

@@ -23,7 +23,7 @@ function handleScroll() {
 <template>
   <header
     :class="[
-      'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-[4px] border-[#1A1A1A]',
+      'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-4 border-[#1A1A1A]',
       // Menggunakan bg-[#F0F0F0] untuk kesan studio jahit yang bersih
       isScrolled
         ? 'bg-[#F0F0F0] shadow-[0_6px_0_0_#1A1A1A] py-1'
@@ -68,23 +68,10 @@ function handleScroll() {
           </a>
         </nav>
 
-        <!-- Desktop CTA - Bright Yellow sebagai penarik perhatian utama -->
-        <div class="hidden lg:flex">
-          <a
-            href="https://wa.me/62895629233434?text=Halo+Chaya+Atelier,+saya+ingin+konsultasi+jahitan..."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 bg-[#FFD93D] rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-3 font-black text-sm text-[#1A1A1A] uppercase tracking-widest shadow-[5px_5px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all duration-150"
-          >
-            <i class="bi bi-whatsapp text-lg"></i>
-            Mulai Konsultasi
-          </a>
-        </div>
-
         <!-- Mobile Menu Toggle -->
         <div class="lg:hidden flex items-center gap-3">
           <button
-            class="w-12 h-12 flex items-center justify-center rounded-xl border-[3px] border-[#1A1A1A] bg-[#B1AFFF] shadow-[3px_3px_0_0_#1A1A1A] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all"
+            class="w-12 h-12 flex items-center justify-center rounded-xl border-[3px] border-[#1A1A1A] bg-[#B1AFFF] shadow-[3px_3px_0_0_#1A1A1A] active:shadow-none active:translate-x-0.75 active:translate-y-0.75 transition-all"
             @click="isOpen = !isOpen"
           >
             <i
@@ -107,7 +94,7 @@ function handleScroll() {
     >
       <div
         v-if="isOpen"
-        class="lg:hidden bg-[#F0F0F0] border-t-[4px] border-[#1A1A1A] px-4 pt-4 pb-8 space-y-2"
+        class="lg:hidden bg-[#F0F0F0] border-t-4 border-[#1A1A1A] px-4 py-4 space-y-2"
       >
         <a
           v-for="link in navLinks"
@@ -119,17 +106,6 @@ function handleScroll() {
           {{ link.label }}
           <i class="bi bi-arrow-right-short text-2xl"></i>
         </a>
-        <div class="pt-4">
-          <a
-            href="https://wa.me/62895629233434"
-            target="_blank"
-            class="flex items-center justify-center gap-3 bg-[#FFD93D] border-[3px] border-[#1A1A1A] px-5 py-5 rounded-2xl font-black text-sm text-[#1A1A1A] uppercase tracking-widest shadow-[6px_6px_0_0_#1A1A1A]"
-            @click="isOpen = false"
-          >
-            <i class="bi bi-whatsapp text-xl"></i>
-            WhatsApp Sekarang
-          </a>
-        </div>
       </div>
     </Transition>
   </header>

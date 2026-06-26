@@ -67,7 +67,7 @@ const layananOptions = [
               >Pakaian Anda.</span
             >
             <span
-              class="absolute bottom-2 left-0 right-0 h-6 bg-[#B4E4FF] -z-0 border-2 border-[#1A1A1A] rounded-lg"
+              class="absolute bottom-2 left-0 right-0 h-6 bg-[#B4E4FF] z-0 border-2 border-[#1A1A1A] rounded-lg"
             ></span>
           </span>
         </h2>
@@ -143,7 +143,7 @@ const layananOptions = [
             <button
               @click="handleSubmit"
               :disabled="!form.nama || !form.pesan"
-              class="w-full flex items-center justify-center gap-3 bg-[#1A1A1A] rounded-[1.5rem] border-[3px] border-[#1A1A1A] px-8 py-5 font-black text-lg text-white uppercase tracking-widest shadow-[8px_8px_0_0_#FFD93D] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0"
+              class="w-full flex items-center justify-center gap-3 bg-[#1A1A1A] rounded-3xl border-[3px] border-[#1A1A1A] px-8 py-5 font-black text-lg text-white uppercase tracking-widest shadow-[8px_8px_0_0_#FFD93D] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0"
             >
               <i class="bi bi-whatsapp text-2xl text-[#25D366]"></i>
               Kirim ke WhatsApp
@@ -159,7 +159,7 @@ const layananOptions = [
             :initial="{ opacity: 0, x: 50 }"
             :visible-once="{ opacity: 1, x: 0 }"
             :duration="700"
-            class="bg-[#B4E4FF] rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
+            class="bg-[#B4E4FF] rounded-4xl border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
           >
             <div class="flex items-center gap-5 mb-6">
               <div
@@ -197,7 +197,7 @@ const layananOptions = [
             :visible-once="{ opacity: 1, x: 0 }"
             :duration="700"
             :delay="100"
-            class="bg-[#B1AFFF] rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
+            class="bg-[#B1AFFF] rounded-4xl border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
           >
             <div class="flex items-center gap-5 mb-6">
               <div
@@ -208,12 +208,12 @@ const layananOptions = [
               <h4
                 class="font-black text-xl text-[#1A1A1A] uppercase leading-none"
               >
-                Studio Kami
+                Toko Kami
               </h4>
             </div>
             <p class="font-bold text-[#1A1A1A] mb-8 leading-relaxed">
               Banjarsari RT 5/RW 6 No. 09, Koripan,<br />
-              Matesih, Karanganyar, Jawa Tengah 57781
+              Matesih, Karanganyar, Jawa Tengah, 57781
             </p>
             <a
               href="https://maps.app.goo.gl/UHPqRwZQQsFoJhEG9"
@@ -231,7 +231,7 @@ const layananOptions = [
             :visible-once="{ opacity: 1, x: 0 }"
             :duration="700"
             :delay="200"
-            class="bg-[#FFD93D] rounded-[2rem] border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
+            class="bg-[#FFD93D] rounded-4xl border-[3px] border-[#1A1A1A] p-8 shadow-[8px_8px_0_0_#1A1A1A]"
           >
             <div class="flex items-center gap-4 mb-4">
               <i class="bi bi-clock-history text-2xl text-[#1A1A1A]"></i>
@@ -244,11 +244,11 @@ const layananOptions = [
                 class="flex justify-between border-b-2 border-[#1A1A1A]/10 pb-2"
               >
                 <span>Senin - Sabtu</span>
-                <span>07.00 - 17.00</span>
+                <span>07.00 - 17.30</span>
               </div>
               <div class="flex justify-between pt-1">
                 <span>Minggu</span>
-                <span>13.00 - 17.00</span>
+                <span>13.00 - 17.30</span>
               </div>
             </div>
           </div>
@@ -262,9 +262,9 @@ const layananOptions = [
           :initial="{ opacity: 0, y: 50 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="700"
-          class="bg-white rounded-[3rem] border-[4px] border-[#1A1A1A] overflow-hidden shadow-[15px_15px_0_0_#1A1A1A]"
+          class="bg-white rounded-[3rem] border-4 border-[#1A1A1A] overflow-hidden shadow-[15px_15px_0_0_#1A1A1A]"
         >
-          <div class="relative w-full h-[450px]">
+          <div class="relative w-full h-112.5">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d434.53839880263786!2d111.0625025108162!3d-7.657089460109011!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7a2199c5f30f5b%3A0x3cab39b4a55dd5a3!2sChaya%20Collection!5e1!3m2!1sid!2sid!4v1777868304644!5m2!1sid!2sid"
               width="100%"

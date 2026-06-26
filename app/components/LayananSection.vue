@@ -100,10 +100,10 @@ const layanan = [
         >
           <div
             :class="[
-              'relative h-full p-10 rounded-[2rem] border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
+              'relative h-full p-10 rounded-4xl border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
               item.accent
-                ? 'bg-[#B1AFFF] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px]'
-                : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-[8px] hover:translate-y-[8px] hover:border-[#1A1A1A]',
+                ? 'bg-[#B1AFFF] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2'
+                : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:border-[#1A1A1A]',
             ]"
           >
             <!-- Number Overlay -->
@@ -140,25 +140,6 @@ const layanan = [
               >
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Bottom CTA -->
-      <div class="mt-20 text-center">
-        <div
-          v-motion
-          :initial="{ opacity: 0, scale: 0.9 }"
-          :visible-once="{ opacity: 1, scale: 1 }"
-          :duration="600"
-        >
-          <a
-            href="https://wa.me/62895629233434"
-            target="_blank"
-            class="inline-flex items-center gap-4 bg-[#FFD93D] rounded-2xl border-[4px] border-[#1A1A1A] px-10 py-5 font-black text-lg text-[#1A1A1A] uppercase tracking-widest shadow-[10px_10px_0_0_#B1AFFF] hover:shadow-none hover:translate-x-[10px] hover:translate-y-[10px] transition-all duration-200"
-          >
-            <i class="bi bi-chat-dots-fill text-xl"></i>
-            Konsultasi Jahitan Sekarang
-          </a>
         </div>
       </div>
     </div>

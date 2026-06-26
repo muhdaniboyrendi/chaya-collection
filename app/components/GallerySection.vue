@@ -85,10 +85,10 @@ const items = [
           :delay="i * 100"
         >
           <div
-            class="group relative overflow-hidden rounded-[2.5rem] border-[4px] border-[#1A1A1A] cursor-pointer shadow-[12px_12px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-[12px] hover:translate-y-[12px] transition-all duration-300"
+            class="group relative overflow-hidden rounded-[2.5rem] border-4 border-[#1A1A1A] cursor-pointer shadow-[12px_12px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-3 hover:translate-y-3 transition-all duration-300"
           >
             <!-- Image Wrapper with Color Overlay on Hover -->
-            <div class="aspect-[4/5] relative overflow-hidden">
+            <div class="aspect-4/5 relative overflow-hidden">
               <NuxtImg
                 :src="item.image"
                 width="600"
@@ -101,7 +101,7 @@ const items = [
 
               <!-- Hover Overlay Gradient -->
               <div
-                class="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"
+                class="absolute inset-0 bg-linear-to-t from-[#1A1A1A] via-transparent to-transparent opacity-0 group-hover:opacity-80 transition-opacity duration-300"
               ></div>
             </div>
 
@@ -121,7 +121,7 @@ const items = [
                   {{ item.label }}
                 </span>
                 <div
-                  class="w-10 h-10 bg-white border-[2px] border-[#1A1A1A] rounded-full flex items-center justify-center shrink-0"
+                  class="w-10 h-10 bg-white border-2 border-[#1A1A1A] rounded-full flex items-center justify-center shrink-0"
                 >
                   <i class="bi bi-arrow-up-right text-[#1A1A1A] font-bold"></i>
                 </div>
@@ -131,23 +131,12 @@ const items = [
             <!-- Quick Info Badge (Top Right) -->
             <div class="absolute top-5 right-5">
               <div
-                class="bg-white border-[2px] border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
+                class="bg-white border-2 border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
               >
                 NEW WORK
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Discovery Bar -->
-      <div class="mt-16 flex flex-wrap justify-center gap-4">
-        <div
-          v-for="tag in ['#Casual', '#Elegant', '#Modern', '#Tradisional']"
-          :key="tag"
-          class="bg-white border-[2px] border-[#1A1A1A] px-6 py-2 rounded-full font-black text-sm text-[#1A1A1A] hover:bg-[#B4E4FF] transition-colors cursor-default"
-        >
-          {{ tag }}
         </div>
       </div>
     </div>

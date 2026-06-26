@@ -64,7 +64,7 @@ function toggle(i) {
                 >Ditanyakan.</span
               >
               <span
-                class="absolute bottom-2 left-0 right-0 h-6 bg-[#FFD93D] -z-0 border-2 border-[#1A1A1A] rounded-lg"
+                class="absolute bottom-2 left-0 right-0 h-6 bg-[#FFD93D] z-0 border-2 border-[#1A1A1A] rounded-lg"
               ></span>
             </span>
           </h2>
@@ -110,10 +110,10 @@ function toggle(i) {
           >
             <div
               :class="[
-                'rounded-[2rem] border-[3px] border-[#1A1A1A] overflow-hidden transition-all duration-300',
+                'rounded-4xl border-[3px] border-[#1A1A1A] overflow-hidden transition-all duration-300',
                 openIdx === i
-                  ? 'bg-white shadow-[10px_10px_0_0_#1A1A1A] translate-x-[-4px] translate-y-[-4px]'
-                  : 'bg-white shadow-[6px_6px_0_0_#1A1A1A] hover:translate-y-[-2px]',
+                  ? 'bg-white shadow-[10px_10px_0_0_#1A1A1A] translate-x-1 translate-y-1'
+                  : 'bg-white shadow-[6px_6px_0_0_#1A1A1A] hover:translate-y-0.5',
               ]"
             >
               <button
@@ -129,7 +129,7 @@ function toggle(i) {
                   :class="[
                     'w-12 h-12 rounded-2xl border-[3px] border-[#1A1A1A] flex items-center justify-center shrink-0 transition-all duration-500 shadow-[3px_3px_0_0_#1A1A1A]',
                     openIdx === i
-                      ? 'bg-[#A855F7] rotate-[135deg] shadow-none translate-x-1 translate-y-1'
+                      ? 'bg-[#A855F7] rotate-135 shadow-none translate-x-1 translate-y-1'
                       : 'bg-[#FFD93D]',
                   ]"
                 >
@@ -147,7 +147,7 @@ function toggle(i) {
                 :style="{ maxHeight: openIdx === i ? '300px' : '0px' }"
               >
                 <div class="px-8 pb-8">
-                  <div class="h-[2px] bg-[#1A1A1A]/10 w-full mb-6"></div>
+                  <div class="h-0.5 bg-[#1A1A1A]/10 w-full mb-6"></div>
                   <p class="text-[#4B5563] text-base leading-relaxed font-bold">
                     {{ faq.a }}
                   </p>
