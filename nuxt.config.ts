@@ -18,11 +18,12 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "@vueuse/nuxt",
     "@vueuse/motion/nuxt",
+    "@pinia/nuxt",
   ],
 
   // Nuxt SEO / Site Config
   site: {
-    url: "https://chaya-collection.netlify.app",
+    url: "https://chayacollection.my.id",
     name: "Chaya Collection",
     description:
       "Jasa jahit & toko perlengkapan jahit terpercaya di Matesih, Karanganyar. Berpengalaman lebih dari 25 tahun melayani pelanggan dengan hasil jahitan berkualitas.",

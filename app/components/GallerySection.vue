@@ -57,8 +57,8 @@ const items = [
             :duration="700"
             class="font-black text-5xl sm:text-7xl text-[#1A1A1A] leading-[0.85] tracking-tighter"
           >
-            Kurasi Karya<br />
-            <span class="italic text-[#4B5563]">Terbaik.</span>
+            Karya Terbaik
+            <span class="italic text-[#4B5563]">Kami.</span>
           </h2>
         </div>
         <p
@@ -68,7 +68,7 @@ const items = [
           :duration="700"
           class="text-[#4B5563] text-lg max-w-sm leading-relaxed font-bold border-l-[6px] border-[#FFD93D] pl-6"
         >
-          Eksplorasi hasil jahitan Chaya Atelier. Setiap helai benang
+          Eksplorasi hasil jahitan Chaya Collection. Setiap helai benang
           menceritakan dedikasi kami pada kualitas.
         </p>
       </div>
@@ -125,15 +125,6 @@ const items = [
                 >
                   <i class="bi bi-arrow-up-right text-[#1A1A1A] font-bold"></i>
                 </div>
-              </div>
-            </div>
-
-            <!-- Quick Info Badge (Top Right) -->
-            <div class="absolute top-5 right-5">
-              <div
-                class="bg-white border-2 border-[#1A1A1A] px-3 py-1 rounded-full font-black text-[10px] uppercase tracking-widest shadow-[3px_3px_0_0_#1A1A1A]"
-              >
-                NEW WORK
               </div>
             </div>
           </div>

@@ -81,7 +81,7 @@ const layananOptions = [
           :initial="{ opacity: 0, x: -50 }"
           :visible-once="{ opacity: 1, x: 0 }"
           :duration="700"
-          class="bg-white rounded-[2.5rem] border-[3px] border-[#1A1A1A] p-8 sm:p-10 shadow-[12px_12px_0_0_#1A1A1A]"
+          class="bg-white rounded-4xl border-[3px] border-[#1A1A1A] p-6 sm:p-8 shadow-[12px_12px_0_0_#1A1A1A]"
         >
           <h3
             class="font-black text-2xl text-[#1A1A1A] mb-8 uppercase tracking-tighter italic"
@@ -99,7 +99,7 @@ const layananOptions = [
               <input
                 v-model="form.nama"
                 type="text"
-                placeholder="Misal: Erlan Azhari"
+                placeholder="Misal: John Doe"
                 class="w-full bg-[#F9F9F9] rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-4 text-base text-[#1A1A1A] font-bold placeholder-[#A1A1A1] focus:outline-none focus:bg-[#B1AFFF]/10 focus:shadow-[4px_4px_0_0_#A855F7] transition-all"
               />
             </div>
@@ -134,7 +134,7 @@ const layananOptions = [
               </label>
               <textarea
                 v-model="form.pesan"
-                rows="4"
+                rows="6"
                 placeholder="Ceritakan model baju atau kebutuhan jahit Anda..."
                 class="w-full bg-[#F9F9F9] rounded-2xl border-[3px] border-[#1A1A1A] px-6 py-4 text-base text-[#1A1A1A] font-bold placeholder-[#A1A1A1] focus:outline-none focus:shadow-[4px_4px_0_0_#FFD93D] transition-all resize-none"
               ></textarea>
@@ -145,8 +145,8 @@ const layananOptions = [
               :disabled="!form.nama || !form.pesan"
               class="w-full flex items-center justify-center gap-3 bg-[#1A1A1A] rounded-3xl border-[3px] border-[#1A1A1A] px-8 py-5 font-black text-lg text-white uppercase tracking-widest shadow-[8px_8px_0_0_#FFD93D] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:translate-x-0 disabled:hover:translate-y-0"
             >
-              <i class="bi bi-whatsapp text-2xl text-[#25D366]"></i>
-              Kirim ke WhatsApp
+              <i class="bi bi-send text-2xl"></i>
+              Kirim
             </button>
           </div>
         </div>
@@ -174,7 +174,7 @@ const layananOptions = [
                   Respon Cepat
                 </h4>
                 <p class="font-bold text-[#1A1A1A]/60 text-sm">
-                  Online: 07.00 - 17.00
+                  Online: 07.00 - 17.30
                 </p>
               </div>
             </div>
@@ -262,7 +262,7 @@ const layananOptions = [
           :initial="{ opacity: 0, y: 50 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="700"
-          class="bg-white rounded-[3rem] border-4 border-[#1A1A1A] overflow-hidden shadow-[15px_15px_0_0_#1A1A1A]"
+          class="bg-white rounded-4xl border-4 border-[#1A1A1A] overflow-hidden shadow-[10px_10px_0_0_#1A1A1A]"
         >
           <div class="relative w-full h-112.5">
             <iframe

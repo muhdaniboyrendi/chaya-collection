@@ -72,7 +72,7 @@ const layanan = [
             class="font-black text-5xl sm:text-6xl text-[#1A1A1A] leading-[0.9] tracking-tighter"
           >
             Layanan Kreatif<br />
-            <span class="text-[#A855F7]">Atelier Kami.</span>
+            <span class="text-[#A855F7]">Kami.</span>
           </h2>
         </div>
         <p
@@ -100,7 +100,7 @@ const layanan = [
         >
           <div
             :class="[
-              'relative h-full p-10 rounded-4xl border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
+              'relative h-full p-6 md:p-8 rounded-4xl border-[3px] border-[#1A1A1A] cursor-default group transition-all duration-200',
               item.accent
                 ? 'bg-[#B1AFFF] shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2'
                 : 'bg-white shadow-[8px_8px_0_0_#B4E4FF] hover:shadow-none hover:translate-x-2 hover:translate-y-2 hover:border-[#1A1A1A]',

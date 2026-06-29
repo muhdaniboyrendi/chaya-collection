@@ -5,28 +5,133 @@ const produkAlatJahit = [
   {
     nama: "Benang Jahit",
     kategori: "Benang",
-    harga: "Rp 5.000",
+    harga: "Rp 3.500",
     image: "bi-pellet",
     accent: "#FFD93D", // Yellow
   },
   {
-    nama: "Gunting Kain Profesional",
-    kategori: "Gunting",
-    harga: "Rp 45.000",
+    nama: "Mutiara Sintetis",
+    kategori: "Payet",
+    harga: "Rp 5.000",
     image: "bi-scissors",
     accent: "#B4E4FF", // Mint
   },
   {
-    nama: "Set Jarum Tangan & Mesin",
-    kategori: "Jarum",
-    harga: "Rp 12.000",
+    nama: "Diamond Taiwan",
+    kategori: "Payet",
+    harga: "Rp 7.000",
     image: "bi-patch-check",
     accent: "#B1AFFF", // Lavender
   },
   {
-    nama: "Meteran Jahit Flexible",
-    kategori: "Aksesori",
-    harga: "Rp 8.000",
+    nama: "Manik Mote Bulat",
+    kategori: "Payet",
+    harga: "Rp 6.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Mutiara Kelopak",
+    kategori: "Payet",
+    harga: "Rp 5.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Resleting Jepang",
+    kategori: "Resleting",
+    harga: "Rp 2.500",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Kancing Jepret",
+    kategori: "Resleting",
+    harga: "Rp 12.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Elastik",
+    kategori: "Resleting",
+    harga: "Rp 2.500",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Payet Bambu Panjang",
+    kategori: "Payet",
+    harga: "Rp 5.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Jarum Mesin",
+    kategori: "Jarum",
+    harga: "Rp 3.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Kancing Baju",
+    kategori: "Kancing",
+    harga: "Rp 5.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Meteran Jahit",
+    kategori: "Aksesoris",
+    harga: "Rp 2.500",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Perekat",
+    kategori: "Aksesoris",
+    harga: "Rp 3.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Kapur Jahit",
+    kategori: "Aksesoris",
+    harga: "Rp 3.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Benang Obras",
+    kategori: "Aksesoris",
+    harga: "Rp 10.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Minyak Mesin",
+    kategori: "Aksesoris",
+    harga: "Rp 8.500",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Obat Plisket",
+    kategori: "Aksesoris",
+    harga: "Rp 6.500",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Pendedel",
+    kategori: "Aksesoris",
+    harga: "Rp 3.000",
+    image: "bi-ruler",
+    accent: "#FFD93D", // Yellow
+  },
+  {
+    nama: "Gunting Cekris",
+    kategori: "Aksesoris",
+    harga: "Rp 5.000",
     image: "bi-ruler",
     accent: "#FFD93D", // Yellow
   },
@@ -45,9 +150,7 @@ const produkAlatJahit = [
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Section Header -->
-      <div
-        class="flex flex-col md:flex-row md:items-end justify-between gap-10 mb-16"
-      >
+      <div class="mb-16">
         <div class="max-w-2xl space-y-6">
           <span
             v-motion
@@ -70,23 +173,6 @@ const produkAlatJahit = [
               <span class="relative z-10 text-[#A855F7]">Menjahitmu</span>
             </span>
           </h2>
-        </div>
-
-        <!-- Filter Tabs (Dekstop) -->
-        <div
-          class="flex flex-wrap gap-3"
-          v-motion
-          :initial="{ opacity: 0, y: 10 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="700"
-        >
-          <button
-            v-for="cat in kategoriProduk"
-            :key="cat"
-            class="px-6 py-2 bg-white border-[3px] border-[#1A1A1A] rounded-xl font-black text-xs uppercase tracking-widest shadow-[4px_4px_0_0_#1A1A1A] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:bg-[#A855F7] active:text-white"
-          >
-            {{ cat }}
-          </button>
         </div>
       </div>
 
@@ -123,29 +209,28 @@ const produkAlatJahit = [
             </div>
 
             <!-- Product Info -->
-            <div class="space-y-3">
-              <div class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-[#A855F7]"></span>
-                <span
-                  class="text-[10px] font-black uppercase tracking-widest text-[#A855F7] italic"
-                >
-                  {{ produk.kategori }}
-                </span>
-              </div>
-              <h3
-                class="text-xl font-black text-[#1A1A1A] leading-tight uppercase tracking-tighter min-h-12"
+            <div class="flex items-center gap-2 mb-2">
+              <span class="w-2 h-2 rounded-full bg-[#A855F7]"></span>
+              <span
+                class="text-[10px] font-black uppercase tracking-widest text-[#A855F7] italic"
               >
-                {{ produk.nama }}
-              </h3>
-              <div
-                class="flex items-center justify-between pt-4 border-t-2 border-[#1A1A1A]/5"
-              >
-                <span
-                  class="text-2xl font-black text-[#1A1A1A] italic tracking-tighter"
-                  >{{ produk.harga }}</span
-                >
-              </div>
+                {{ produk.kategori }}
+              </span>
             </div>
+            <h3
+              class="text-xl font-black text-[#1A1A1A] leading-tight uppercase tracking-tighter mb-4"
+            >
+              {{ produk.nama }}
+            </h3>
+
+            <span class="text-sm text-black/60 italic tracking-tight"
+              >Mulai dari :</span
+            >
+            <p
+              class="text-3xl font-black text-[#1A1A1A] italic tracking-tighter"
+            >
+              {{ produk.harga }}
+            </p>
           </div>
         </div>
       </div>

@@ -81,7 +81,7 @@ onMounted(() => {
               class="text-[#4B5563] text-xl leading-relaxed max-w-3xl mx-auto font-bold pl-1"
             >
               Wujudkan pakaian impian Anda dengan sentuhan ahli di Chaya
-              Atelier. Custom tailoring, modifikasi, dan desain eksklusif di
+              Collection. Custom tailoring, modifikasi, dan desain eksklusif di
               pusat Matesih.
             </p>
           </div>
