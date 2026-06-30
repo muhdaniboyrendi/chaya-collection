@@ -9,7 +9,7 @@ export const useProductStore = defineStore("product", () => {
       detail: [
         {
           name: "Hitam",
-          price: "3.000",
+          price: "3.500",
           image: "/seragam-sekolah.jpg",
         },
         {
@@ -24,108 +24,347 @@ export const useProductStore = defineStore("product", () => {
       kategori: "Payet",
       harga: "5.000",
       image: "/seragam-sekolah.jpg",
+      slug: "mutiara-sintetis",
+      detail: [
+        {
+          name: "4 mm",
+          price: "4.500",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "6 mm",
+          price: "5.500",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Diamond Taiwan",
       kategori: "Payet",
       harga: "7.000",
       image: "/seragam-sekolah.jpg",
+      slug: "diamont-taiwan",
+      detail: [
+        {
+          name: "Pelangi 7x15",
+          price: "7.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Manik Mote Bulat",
       kategori: "Payet",
       harga: "6.000",
       image: "/seragam-sekolah.jpg",
+      slug: "manik-mote-bulat",
+      detail: [
+        {
+          name: "4 mm",
+          price: "6.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "6 mm",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Mutiara Kelopak",
       kategori: "Payet",
       harga: "5.000",
       image: "/seragam-sekolah.jpg",
+      slug: "mutiara-kelopak",
+      detail: [
+        {
+          name: "Kecil",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Resleting Jepang",
       kategori: "Resleting",
       harga: "2.500",
       image: "/seragam-sekolah.jpg",
+      slug: "resleting-jepang",
+      detail: [
+        {
+          name: "20 inch KGC",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "20 Inch Kim",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "20 Inch HD",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Kancing Jepret",
       kategori: "Resleting",
       harga: "12.000",
       image: "/seragam-sekolah.jpg",
+      slug: "kancing-jepret",
+      detail: [
+        {
+          name: "12 mm",
+          price: "14.000/Lusin",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "10 mm KAM",
+          price: "5.000/Lusin",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Elastik",
       kategori: "Resleting",
       harga: "2.500",
       image: "/seragam-sekolah.jpg",
+      slug: "elastik",
+      detail: [
+        {
+          name: "3 cm Tebal",
+          price: "5.000/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "2.5 cm Tebal",
+          price: "4.500/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "2 cm Tebal",
+          price: "4.000/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "3 cm Biasa",
+          price: "3.000/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "2.5 cm Biasa",
+          price: "2.500/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "2 cm Biasa",
+          price: "2.000/meter",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Payet Bambu Panjang",
       kategori: "Payet",
       harga: "5.000",
       image: "/seragam-sekolah.jpg",
+      slug: "payet-bambu-panjang",
+      detail: [
+        {
+          name: "Hitam",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "Emas",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "Silver",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Jarum Mesin",
       kategori: "Jarum",
       harga: "3.000",
       image: "/seragam-sekolah.jpg",
+      slug: "jarum-mesin",
+      detail: [
+        {
+          name: "DB 90/14",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "DB 75/11",
+          price: "3.500",
+          image: "/seragam-sekolah.jpg",
+        },
+        // {
+        //   name: "DB 75/11",
+        //   price: "3.500",
+        //   image: "/seragam-sekolah.jpg",
+        // },
+        {
+          name: "DC 90/14",
+          price: "3.500",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Kancing Baju",
       kategori: "Kancing",
       harga: "5.000",
       image: "/seragam-sekolah.jpg",
+      slug: "kancing-baju",
+      detail: [
+        // {
+        //   name: "Hitam",
+        //   price: "3.000",
+        //   image: "/seragam-sekolah.jpg",
+        // },
+        // {
+        //   name: "Warna",
+        //   price: "3.500",
+        //   image: "/seragam-sekolah.jpg",
+        // },
+      ],
     },
     {
       nama: "Meteran Jahit",
       kategori: "Aksesoris",
       harga: "2.500",
       image: "/seragam-sekolah.jpg",
+      slug: "meteran-jahit",
+      detail: [
+        {
+          name: "Kecil",
+          price: "2.500",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "Besar",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Perekat",
       kategori: "Aksesoris",
       harga: "3.000",
       image: "/seragam-sekolah.jpg",
+      slug: "perekat",
+      detail: [
+        {
+          name: "Hitam",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "Putih",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Kapur Jahit",
       kategori: "Aksesoris",
       harga: "3.000",
       image: "/seragam-sekolah.jpg",
+      slug: "kapur-jahit",
+      detail: [
+        {
+          name: "Pensil",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+        {
+          name: "Malaysia",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Benang Obras",
       kategori: "Aksesoris",
       harga: "10.000",
       image: "/seragam-sekolah.jpg",
+      slug: "benang-obras",
+      detail: [
+        {
+          name: "Benang Obras Angsa Dunia",
+          price: "10.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Minyak Mesin",
       kategori: "Aksesoris",
       harga: "8.500",
       image: "/seragam-sekolah.jpg",
+      slug: "minyak-mesin",
+      detail: [
+        {
+          name: "Minyak Mesing Singer",
+          price: "8.500",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Obat Plisket",
       kategori: "Aksesoris",
-      harga: "6.500",
+      harga: "7.000",
       image: "/seragam-sekolah.jpg",
+      slug: "obat-plisket",
+      detail: [
+        {
+          name: "Obat Prisket",
+          price: "7.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Pendedel",
       kategori: "Aksesoris",
       harga: "3.000",
       image: "/seragam-sekolah.jpg",
+      slug: "pendedel",
+      detail: [
+        {
+          name: "Pendedel",
+          price: "3.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
     {
       nama: "Gunting Cekris",
       kategori: "Aksesoris",
       harga: "5.000",
       image: "/seragam-sekolah.jpg",
+      slug: "gunting-cekris",
+      detail: [
+        {
+          name: "Gunting Cekris",
+          price: "5.000",
+          image: "/seragam-sekolah.jpg",
+        },
+      ],
     },
   ];
 

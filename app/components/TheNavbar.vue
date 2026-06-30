@@ -24,10 +24,7 @@ function handleScroll() {
   <header
     :class="[
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b-4 border-[#1A1A1A]',
-      // Menggunakan bg-[#F0F0F0] untuk kesan studio jahit yang bersih
-      isScrolled
-        ? 'bg-[#F0F0F0] shadow-[0_6px_0_0_#1A1A1A] py-1'
-        : 'bg-[#F0F0F0] py-3',
+      isScrolled ? 'bg-white shadow-[0_6px_0_0_#1A1A1A] py-1' : 'bg-white py-3',
     ]"
   >
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -49,7 +46,7 @@ function handleScroll() {
               Chaya
             </div>
             <div
-              class="text-[10px] font-black tracking-[0.3em] text-[#A855F7] uppercase mt-1"
+              class="text-[10px] font-black tracking-[0.3em] text-[#9f3bfc] uppercase mt-1"
             >
               Collection
             </div>

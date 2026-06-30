@@ -177,14 +177,14 @@ const produkAlatJahit = [
       </div>
 
       <!-- Products Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
         <div
           v-for="(produk, index) in produkAlatJahit"
           :key="index"
           v-motion
           :initial="{ opacity: 0, y: 40 }"
           :visible-once="{ opacity: 1, y: 0 }"
-          :delay="index * 100"
+          :delay="index * 20"
           :duration="700"
         >
           <div
@@ -234,6 +234,14 @@ const produkAlatJahit = [
           </div>
         </div>
       </div>
+
+      <NuxtLink
+        to="/products"
+        class="block w-fit text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-7 py-4 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200"
+      >
+        Lihat Semua Produk
+        <i class="bi bi-arrow-right ml-2"></i>
+      </NuxtLink>
     </div>
   </section>
 </template>
