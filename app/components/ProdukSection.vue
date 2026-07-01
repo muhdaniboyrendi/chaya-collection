@@ -1,139 +1,28 @@
 <script setup>
-const kategoriProduk = ["Semua", "Benang", "Gunting", "Jarum", "Aksesori"];
-
 const produkAlatJahit = [
   {
-    nama: "Benang Jahit",
-    kategori: "Benang",
+    nama: "Benang",
     harga: "Rp 3.500",
     image: "bi-pellet",
-    accent: "#FFD93D", // Yellow
+    accent: "#FFD93D",
   },
   {
-    nama: "Mutiara Sintetis",
-    kategori: "Payet",
+    nama: "Payet",
     harga: "Rp 5.000",
-    image: "bi-scissors",
-    accent: "#B4E4FF", // Mint
+    image: "bi-pellet",
+    accent: "#FFD93D",
   },
   {
-    nama: "Diamond Taiwan",
-    kategori: "Payet",
-    harga: "Rp 7.000",
-    image: "bi-patch-check",
-    accent: "#B1AFFF", // Lavender
-  },
-  {
-    nama: "Manik Mote Bulat",
-    kategori: "Payet",
-    harga: "Rp 6.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Mutiara Kelopak",
-    kategori: "Payet",
-    harga: "Rp 5.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Resleting Jepang",
-    kategori: "Resleting",
-    harga: "Rp 2.500",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Kancing Jepret",
-    kategori: "Resleting",
-    harga: "Rp 12.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Elastik",
-    kategori: "Resleting",
-    harga: "Rp 2.500",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Payet Bambu Panjang",
-    kategori: "Payet",
-    harga: "Rp 5.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Jarum Mesin",
-    kategori: "Jarum",
+    nama: "Jarum",
     harga: "Rp 3.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
+    image: "bi-pellet",
+    accent: "#FFD93D",
   },
   {
-    nama: "Kancing Baju",
-    kategori: "Kancing",
-    harga: "Rp 5.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Meteran Jahit",
-    kategori: "Aksesoris",
-    harga: "Rp 2.500",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Perekat",
-    kategori: "Aksesoris",
+    nama: "Kancing",
     harga: "Rp 3.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Kapur Jahit",
-    kategori: "Aksesoris",
-    harga: "Rp 3.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Benang Obras",
-    kategori: "Aksesoris",
-    harga: "Rp 10.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Minyak Mesin",
-    kategori: "Aksesoris",
-    harga: "Rp 8.500",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Obat Plisket",
-    kategori: "Aksesoris",
-    harga: "Rp 6.500",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Pendedel",
-    kategori: "Aksesoris",
-    harga: "Rp 3.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
-  },
-  {
-    nama: "Gunting Cekris",
-    kategori: "Aksesoris",
-    harga: "Rp 5.000",
-    image: "bi-ruler",
-    accent: "#FFD93D", // Yellow
+    image: "bi-pellet",
+    accent: "#FFD93D",
   },
 ];
 </script>
@@ -201,22 +90,9 @@ const produkAlatJahit = [
                   produk.image,
                 ]"
               ></i>
-              <div
-                class="absolute top-3 right-3 bg-[#1A1A1A] text-white text-[10px] font-black px-4 py-1 rounded-full uppercase italic tracking-widest"
-              >
-                Ready
-              </div>
             </div>
 
             <!-- Product Info -->
-            <div class="flex items-center gap-2 mb-2">
-              <span class="w-2 h-2 rounded-full bg-[#A855F7]"></span>
-              <span
-                class="text-[10px] font-black uppercase tracking-widest text-[#A855F7] italic"
-              >
-                {{ produk.kategori }}
-              </span>
-            </div>
             <h3
               class="text-xl font-black text-[#1A1A1A] leading-tight uppercase tracking-tighter mb-4"
             >
@@ -235,13 +111,20 @@ const produkAlatJahit = [
         </div>
       </div>
 
-      <NuxtLink
-        to="/products"
-        class="block w-fit text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-7 py-4 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200"
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 40 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="700"
       >
-        Lihat Semua Produk
-        <i class="bi bi-arrow-right ml-2"></i>
-      </NuxtLink>
+        <NuxtLink
+          to="/products"
+          class="block w-fit text-center gap-2 bg-[#B4E4FF] rounded-2xl border-[3px] border-[#1A1A1A] text-[#1A1A1A] px-7 py-4 font-black text-lg uppercase tracking-wider shadow-[8px_8px_0_0_#1A1A1A] hover:shadow-none hover:translate-x-2 hover:translate-y-2 transition-all duration-200"
+        >
+          Lihat Semua Produk
+          <i class="bi bi-arrow-right ml-2"></i>
+        </NuxtLink>
+      </div>
     </div>
   </section>
 </template>
