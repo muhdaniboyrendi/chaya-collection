@@ -42,6 +42,7 @@ const { productList } = useProductStore();
               width="300"
               height="300"
               loading="lazy"
+              format="webp"
               placeholder
               class="w-full aspect-square object-cover object-center"
             />

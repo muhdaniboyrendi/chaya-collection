@@ -29,6 +29,7 @@ const productDetail = computed(() => {
             width="300"
             height="300"
             loading="lazy"
+            format="webp"
             placeholder
             class="w-1/3 aspect-square object-cover object-center rounded-md"
           />
